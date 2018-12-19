@@ -1,0 +1,15 @@
+title: 一个图书馆员的编程笔记
+email: hfl@huangfeilong.com
+description: 写程序时的一些笔记，曾经使用过Java、Python等，现在主要使用Ruby， 涉及领域主要有图书馆学、蒙古学。
+baseurl: ""
+url: ""
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: minima
+minima:
+  date_format: "%Y年%m月%d日"
+plugins:
+  - jekyll-feed
