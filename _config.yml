@@ -3,8 +3,8 @@ email: hfl@huangfeilong.com
 description: 写程序时的一些笔记，曾经使用过Java、Python等，现在主要使用Ruby， 涉及领域主要有图书馆学、蒙古学。
 baseurl: ""
 url: ""
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: hfl
+github_username:  hfl
 
 # Build settings
 markdown: kramdown
