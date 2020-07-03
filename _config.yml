@@ -1,6 +1,6 @@
-title: 一个图书馆员的编程笔记
+title: 一个喜欢技术的图书馆员
 email: hfl@huangfeilong.com
-description: 写程序时的一些笔记，曾经使用过Java、Python等，现在主要使用Ruby， 涉及领域主要有图书馆学、蒙古学。
+description: 我不排斥理论，但是我更推崇技术，没有技术实现，理论只是空谈。
 baseurl: ""
 url: ""
 twitter_username: hfl
@@ -13,3 +13,5 @@ minima:
   date_format: "%Y年%m月%d日"
 plugins:
   - jekyll-feed
+jekyll_compose:
+    auto_open: true
