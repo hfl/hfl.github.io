@@ -1,0 +1,113 @@
+I"1<h2 id="span-行内级元素文字修饰器">Span 行内级元素——文字修饰器</h2>
+
+<h3 id="着重提示">着重提示</h3>
+
+<p>着重提示可以通过在文字前后加上星号或者下划线来表示（译者注：英文中划重点通常用斜体字表示，这与中文习惯不同，如果想要加粗，可以使用后面的方法）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是 *重点*，
+_这也是_ 重点
+</code></pre></div></div>
+
+<p>加粗提示需要使用双星号或者双下划线：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是 **重点**，
+__这也是__重点
+</code></pre></div></div>
+
+<p>这种使用星号划重点的方式在行内也可以用哦（译者注：其实在中文中就是需要这种行内使用的标记，省去空格了）。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>我劝天公**重抖擞**，不拘一格降人才！
+</code></pre></div></div>
+
+<h3 id="链接和图像">链接和图像</h3>
+
+<p>使用方括号括住需要链接的文字，后面接着用圆括号括住需要链接的地址URL就生成了一个链接：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>一个 [链接](http://kramdown.gettalong.org)
+到kramdown主页的链接就这样生成了。
+</code></pre></div></div>
+
+<p>当然，你也可以添加一个链接的提示信息：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>一个[链接](http://karamdown.gettalong.org "karamdown 主页")
+到kramdown主页的链接诶就这样生成了。
+</code></pre></div></div>
+
+<p>另外，还有一种不打断文字流的方式可以创建链接，就是将链接地址URL和提示文本以引用名方式放在需要链接文字的后面，引用名也要用方括号括起来：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>一个[链接][kramdown hp]到kramdown主页的链接就这样生成了。
+
+[kramdown hp]: http://kramdown.gettalong.org "kramdown 主页"
+</code></pre></div></div>
+
+<p>如果链接文字恰好就是引用名，只需要有一个就可以了：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>一个链接到 [kramdown 主页] 的链接就这样生成了。
+
+[kramdown 主页]: http://kramdwon.gettalong.org "kramdown 主页"
+</code></pre></div></div>
+
+<p>如果链接已经掌握，生成图像引用就非常容易了：就是在链接的前面加一个叹号。原来的链接文字位置就是图像的交互文字，链接地址就是图像的源地址了：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>一个图像： ![gras](images/image.jpg)
+</code></pre></div></div>
+
+<h3 id="行内代码">行内代码</h3>
+
+<p>通过在文字前后加上反向单引号就可以将其标示为代码了：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>通过执行`ruby -v`就可以看到所使用Ruby的版本了。
+</code></pre></div></div>
+
+<p>如果你想在你的文字中使用反向单引号，那么就需要两个或者更多的反向单引号来作为分割符了。在开始分割符后和结束分割符前的空格将被忽略：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>使用反向单引号来标记 `` `代码` `` 。
+</code></pre></div></div>
+
+<h3 id="脚注">脚注</h3>
+
+<p>脚注使用也很简单。首先设置一个脚注标记（在一个方括号内用一个插入符号和一个脚注名字构成），然后在后面定义这个脚注（定义看起来就像是链接定义）就可以了：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是一个脚注[^1]
+
+[^1]: 脚注就是这样使用的。
+</code></pre></div></div>
+
+<p>脚注定义可以使用块级元素，脚注定义后面所有前面空四个格（或者一个TAB）的行都属于该脚注内容：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是另外一个脚注[^2]。
+
+[^2]:
+    从这里开始就是脚注。
+    
+     
+    一直到这里
+    &gt; 到这里都是！
+
+</code></pre></div></div>
+
+<p>如上所示，脚注名称仅用于锚点，编号按文档顺序自动完成。重复的脚注标记将链接到相同的脚注定义。</p>
+
+<h3 id="缩略语">缩略语</h3>
+
+<p>缩略语只需要添加相应定义，相应的缩略语就可以使用了。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是一个HTML标签。
+
+*[HTML]: 超文本标记语言
+</code></pre></div></div>
+
+<h3 id="html-标签">HTML 标签</h3>
+
+<p>HTML 不仅可以用于块级元素，也可以用于行内元素：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是一个&lt;span sytle="color:red"&gt;红色文字&lt;/span&gt;。
+</code></pre></div></div>
+
+<h3 id="行内属性">行内属性</h3>
+
+<p>就像在一个块级元素中设置属性一样，也可以在行内元素设置属性：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是 *红色*{: style="color: red"}。
+</code></pre></div></div>
+:ET

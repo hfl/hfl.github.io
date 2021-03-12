@@ -1,0 +1,97 @@
+I"D<p>在 Jekyll 中使用命令简化写作。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>在应用的 Gemfile 中添加：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem 'jekyll-compose', group: [:jekyll_plugins]
+</code></pre></div></div>
+
+<p>然后执行：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle
+</code></pre></div></div>
+
+<h2 id="用法">用法</h2>
+
+<p>安装完毕之后（如上），运行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll help</code> ，会看到：</p>
+
+<p>通过帮助会列出可提供命令：</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  draft      <span class="c"># 新建指定名字的文章草稿</span>
+  post       <span class="c"># 新建指定名字的文章</span>
+  publish    <span class="c"># 将草稿发布（将文章由草稿文件夹移至文章文件夹）并且设定日期</span>
+  unpublish  <span class="c"># 将文章移至草稿文件夹</span>
+  page       <span class="c"># 新建指定名字的页面</span>
+</code></pre></div></div>
+
+<p>创建你的新页面：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec jekyll page "My New Page"
+</code></pre></div></div>
+
+<p>创建新文章：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec jekyll post "My New Post"
+</code></pre></div></div>
+
+<p>创建文章草稿：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec jekyll draft "My new draft"
+</code></pre></div></div>
+
+<p>发布草稿文章：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec jekyll publish _drafts/my-new-draft.md
+# 或者可以指定发布日期
+$ bundle exec jekyll publish _drafts/my-new-draft.md --date 2014-01-24
+</code></pre></div></div>
+
+<p>撤回文章：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md
+</code></pre></div></div>
+
+<h2 id="配置">配置</h2>
+
+<p>要定制插件默认配置，编辑 jekyll 配置文件中 <code class="language-plaintext highlighter-rouge">jekyll_compose</code> 部分。</p>
+
+<h3 id="自动在编辑器中打开新草稿或者文章">自动在编辑器中打开新草稿或者文章</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">jekyll_compose</span><span class="pi">:</span>
+    <span class="na">auto_open</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>确认你已经设置 <code class="language-plaintext highlighter-rouge">EDITOR</code> 或者 <code class="language-plaintext highlighter-rouge">JEKYLL_EDITOR</code> 变量。
+例如，如果你想要使用 Atom 编辑器默认可以打开新建的文章或者草稿，可以添加下面设置到你的 shell 配置中：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export JEKYLL_EDITOR=atom
+</code></pre></div></div>
+
+<p>后面设置优先，会覆盖前面的 <code class="language-plaintext highlighter-rouge">EDITOR</code> 值。</p>
+
+<h3 id="设置草稿或者文章的默认前端值">设置草稿或者文章的默认前端值</h3>
+
+<p>如果你希望在新建文章或者草稿的时候会添加一些默认的前端值，那么就可以设置 <code class="language-plaintext highlighter-rouge">draft_default_front_matter</code> 和 <code class="language-plaintext highlighter-rouge">post_default_front_matter</code> 的配置，例如：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">jekyll_compose</span><span class="pi">:</span>
+  <span class="na">draft_default_front_matter</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span>
+    <span class="na">category</span><span class="pi">:</span>
+    <span class="na">tags</span><span class="pi">:</span>
+  <span class="na">post_default_front_matter</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span>
+    <span class="na">category</span><span class="pi">:</span>
+    <span class="na">tags</span><span class="pi">:</span>
+    <span class="na">published</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">sitemap</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<p>这些也可以自动添加：</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">date</code> 属性设置时间戳。</li>
+  <li><code class="language-plaintext highlighter-rouge">title</code> 属性设置标题</li>
+</ul>
+
+:ET
