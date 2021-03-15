@@ -18,15 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 老黄编程杂谈
+title: 编程杂谈
 email: hfl@rubyists.org
 description: >- # this means to ignore newlines until "baseurl:"
-  理论需要技术实现的支持，离开技术实现的理论，只是空谈。
+  编程的最高境界是简单实用。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: hfl
 github_username:  hfl
-
+lang: zh-cmn-Hans
 markdown: kramdown
 # Build settings
 theme: minima
@@ -36,8 +36,6 @@ minima:
 plugins:
   - jekyll-feed
 
-jekyll_compose:
-    auto_open: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
