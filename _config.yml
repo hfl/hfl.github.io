@@ -1,11 +1,11 @@
 title: 杂念
-email: your-email@example.com
+email: huang_fl at sina.com
 description: >- # this means to ignore newlines until "baseurl:"
-  林林总总，多样人生；心心念念，诉诸于Web。
+  林林总总，多样人生；心心念念，诉诸Web。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: hfl
+github_username:  hfl
 
 # Build settings
 theme: minima
