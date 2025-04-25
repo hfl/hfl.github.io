@@ -2,7 +2,7 @@
 layout: post
 title:  "定制 Minima 主题的样式"
 date:   2025-04-25 16:20:34 +0800
-categories: jekyll minima
+categories: minima
 ---
 
 使用 Jekyll 默认的主题 Minima，整体还好，但是中文很多时，就会感觉过度挤压在
