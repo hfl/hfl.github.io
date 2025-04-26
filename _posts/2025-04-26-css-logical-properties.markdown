@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CSS 逻辑属性"
-date:   2025-04-26 0:0:34 +0800
+date:   2025-04-26 12:30:34 +0800
 categories: css
 ---
 
@@ -27,18 +27,18 @@ CSS 早期都是针对实体进行绝对方位、长度的设计，后来随着�
 
 下表详列了本指南所论述的属性和值，以及其实体对应关系。假设书写模式（writing-mode）为横排，行内方向为从左到右。
 
-| 逻辑属性或逻辑值 |	实体属性或实体值 |
-|:------------------|------------------:|
-|float: inline-start |	float: left|
-|float: inline-end |	float: right|
-|clear: inline-start |	clear: left|
-|clear: inline-end |	clear: right|
-|inset-inline-start |	left|
-|inset-inline-end |	right|
-|inset-block-start |	top|
-|inset-block-end |	bottom|
-|text-align: start |	text-align: left|
-|text-align: end |	text-align: right|
+| 属性 | 逻辑值 |	实体值 |
+|:------|:------:|-------:|
+| float | inline-start | left |
+|float | inline-end | right |
+|clear | inline-start | left |
+|clear | inline-end |	right |
+| | inset-inline-start |	left |
+| | inset-inline-end |	right |
+| | inset-block-start |	top |
+| | inset-block-end |	bottom |
+|text-align | start |	left |
+|text-align | end |	right |
 
 除了这些有对应关系的属性，另有可以处理块向和行向尺度的简写属性。除 inset 属性外，这些属性没有与实体属性的对应关系。
 
