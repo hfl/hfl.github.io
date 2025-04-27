@@ -19,7 +19,7 @@ categories: css
 
 上面代码说明在 800px 以下，文字颜色为红色。同理如果使用了竖向书写模式，这里就应该设定条件为高度 height，相应的限定条件就是 max-height 和 min-height。
 
-这里需要说明：这里的 width 和 height 不能使用逻辑属性 inline-size 和 block-size。也就是说逻辑属性可以在 `[ ]` 中使用，但是不能在 `( )` 中使用。
+这里需要说明：这里的 width 和 height 不能使用逻辑属性 inline-size 和 block-size。也就是说逻辑属性可以在 `{ }` 中使用，但是不能在 `( )` 中使用。
 
 另外一个设定就是 viewport 元标签。这是在网页 head 部分的一个元标签。用来设定在小屏显示时，需不需要缩放。例如：
 
