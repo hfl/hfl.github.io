@@ -18,3 +18,5 @@ categories: vertical-layout link
 ~~~ css
 a:link { text-decoration: overline }
 ~~~
+
+所以，对于链接，如果使用默认链接显示方式，需要针对 `vertical-lr` 模式下的链接进行调整和优化，从而符合人们的使用习惯。
