@@ -9,3 +9,6 @@ body {
 .post-content > p {
   text-indent: 2em;
 }
+.mgl, td strong {
+  writing-mode: vertical-lr;
+}
