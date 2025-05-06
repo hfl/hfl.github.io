@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll 的时区设置"
 date:   2025-05-06 07:30:34 +0800
-categories: jekyll
+categories: jekyll-timezone
 ---
 
 Jekyll 使用过程中发现有一个问题：有些文章命名是某个日期（例如 5 月 5 日）发布的，但是在系统上出现时，会显示为另一个日期（例如 5 月 4 日）。
