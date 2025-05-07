@@ -1,6 +1,5 @@
 ---
 ---
-
 @import "minima";
 body {
   font-size: 18px;
@@ -11,4 +10,9 @@ body {
 }
 .mgl, td strong {
   writing-mode: vertical-lr;
+}
+a[href^="http"] {
+  background: url("../assets/images/external-link.svg") no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
 }
