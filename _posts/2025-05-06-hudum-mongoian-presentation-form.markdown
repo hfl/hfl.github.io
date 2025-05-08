@@ -41,172 +41,172 @@ categories: mongolian presentation-form
       <th>0</th>
       <td class="mgl"><a title="蒙古文·笔日嘎第二形式"> 𑙠 </a></td>
       <td class="mgl"><a title="蒙古文·UE 词中第三形式"> ‍ᠦ᠌‍ </a></td>
-      <td class="mgl"><a title="蒙古文·MA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·CHA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·MA 词中形式"> ‍ᠮ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·CHA 词末形式"> ‍ᠴ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·A 词末第一形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·带双修饰缠绕的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·八">  </a></td>
+      <td class="mgl"><a title="蒙古文·EE 独立形式"> ᠧ </a></td>
+      <td class="mgl"><a title="蒙古文·RA 词首形式"> ᠿ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·阿努斯瓦勒第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·DA 词中形式">  </a></td>
     </tr>
     <tr>
       <th>1</th>
       <td class="mgl"><a title="蒙古文·笔日嘎第三形式"> 𑙡 </a></td>
       <td class="mgl"><a title="蒙古文·UE 词末第二形式"> ‍ᠦ᠋ </a></td>
-      <td class="mgl"><a title="蒙古文·MA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·JA 词中第一形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·MA 词末形式"> ‍ᠮ </a></td>
+      <td class="mgl"><a title="蒙古文·JA 词中第一形式"> ‍ᠵ‍ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·A 词末第二形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·带双修饰旋转缠绕的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·九">  </a></td>
+      <td class="mgl"><a title="蒙古文·EE 词中形式"> ‍ᠧ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·FA 词首形式"> ᠹ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·维萨日嘎第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·PA 词中形式">  </a></td>
     </tr>
     <tr>
       <th>2</th>
       <td class="mgl"><a title="蒙古文·笔日嘎第四形式"> 𑙢 </a></td>
       <td class="mgl"><a title="蒙古文·EE 词首形式"> ᠧ‍ </a></td>
-      <td class="mgl"><a title="蒙古文·LA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·JA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·LA 词中形式"> ‍ᠯ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·JA 词末形式"> ‍ᠵ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·A 词末第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·省略号">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·A 独立第一形式"> ᠠ </a></td>
+      <td class="mgl"><a title="蒙古文·NA 词首第一形式"> ᠮ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·KA 词首形式"> ᠺ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·扎嘛噜">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·PHA 词中形式">  </a></td>
     </tr>
     <tr>
       <th>3</th>
       <td class="mgl"><a title="蒙古文·笔日嘎第五形式">𑙣</a></td>
       <td class="mgl"><a title="蒙古文·EE 词末形式"> ‍ᠧ </a></td>
-      <td class="mgl"><a title="蒙古文·LA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·RA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·LA 词末形式"> ‍ᠯ </a></td>
+      <td class="mgl"><a title="蒙古文·RA 词末形式"> ‍ᠷ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·A 词末第四形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·逗号">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·E 独立第二形式"> ᠡ </a></td>
+      <td class="mgl"><a title="蒙古文·ANG 词中形式"> ‍ᠩ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·KHA 词首形式"> ᠻ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·乌巴达嘛">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·ZHA 词中形式">  </a></td>
     </tr>
     <tr>
       <th>4</th>
       <td class="mgl"><a title="蒙古文字母·A 词首第一形式">ᠠ‍</a></td>
       <td class="mgl"><a title="蒙古文·NA 词中第二形式"> ‍ᠨ‍ </a></td>
-      <td class="mgl"><a title="蒙古文·SA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·FA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·SA 词中形式"> ‍ᠰ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·FA 词末形式"> ‍ᠹ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·I 词末第一形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td class="mgl"><a title="蒙古文·句号">  </a></td>
+      <td class="mgl"><a title="蒙古文·A 独立第三形式"> ᠠ᠌ </a>?</td>
+      <td class="mgl"><a title="蒙古文·BA 词首形式"> ᠪ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·HAA 词首形式"> ᠾ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·反乌巴达嘛">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·AH 词中形式">  </a></td>
     </tr>
     <tr>
       <th>5</th>
       <td class="mgl"><a title="蒙古文字母·A 词中第一形式"> ‍ᠠ‍ </a></td>
       <td class="mgl"><a title="蒙古文·NA 词中第三形式"> ‍‍‍ᠨ᠌  </a></td>
-      <td class="mgl"><a title="蒙古文·SA 词末第一形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·KA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·SA 词末第一形式"> ‍ᠰ </a></td>
+      <td class="mgl"><a title="蒙古文·KA 词末形式"> ‍ᠺ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·KA 词首形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td class="mgl"><a title="蒙古文·冒号">  </a></td>
+      <td class="mgl"><a title="蒙古文·I 独立第一形式"> ᠢ </a></td>
+      <td class="mgl"><a title="蒙古文·BA 词末第二形式"> ‍ᠪ᠋ </a></td>
+      <td class="mgl"><a title="蒙古文·HAA 词中形式"> ‍ᠾ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·巴鲁达">  </a></td>
+      <td class="mgl"><a title="蒙古文·满文·阿礼嘎利·半 U 词末字形">  </a></td>
     </tr>
     <tr>
       <th>6</th>
       <td class="mgl"><a title="蒙古文字母·A 词中第二形式"> ‍‍ᠠ᠋‍ </a></td>
       <td class="mgl"></td>
-      <td class="mgl"><a title="蒙古文·SA 词末第二形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·KHA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·SA 词末第二形式"> ‍ᠰ᠋ </a></td>
+      <td></td>
+      <td class="mgl"><a title="蒙古文·KHA 词末形式"> ‍ᠻ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·NGA 词首短形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td class="mgl"><a title="蒙古文·四点">  </a></td>
+      <td class="mgl"><a title="蒙古文·I 独立第三形式"> ᠢ᠌ </a>?</td>
+      <td class="mgl"><a title="蒙古文·PA 词首形式"> ᠫ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·ZRA 词首形式"> ᡁ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·三层巴鲁达">  </a></td>
+      <td class="mgl"><a title="蒙古文·满文·阿礼嘎利·半 YA 词首字形">  </a></td>
     </tr>
     <tr>
       <th>7</th>
       <td class="mgl"><a title="蒙古文字母·E 词首第一形式"> ᠡ‍ </a></td>
       <td class="mgl"><a title="蒙古文·ANG 词末形式"> ‍ᠩ </a></td>
       <td></td>
-      <td class="mgl"><a title="蒙古文·TSA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·TSA 词中形式"> ‍ᠼ‍ </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·NGA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·NA 词首第二形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·NA 词首第二形式"> ᠨ᠋‍ </a></td>
+      <td class="mgl"><a title="蒙古文·尼茹股"> ᠊ </a></td>
+      <td class="mgl"><a title="蒙古文·I 词中第一形式"> ‍ᠢ‍ </a></td>
+      <td class="mgl"><a title="蒙古文·QA 词首第一形式"> ᠬ </a></td>
+      <td class="mgl"><a title="蒙古文·LHA 词首形式"> ᡀ </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·A 独立第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·托忒·JA 词末形式">  </a></td>
     </tr>
     <tr>
       <th>8</th>
       <td class="mgl"><a title="蒙古文字母·A 词末第一形式"> ‍ᠠ </a></td>
       <td class="mgl"><a title="蒙古文·BA 词末第一形式"> ‍ᠪ </a></td>
-      <td class="mgl"><a title="蒙古文·SHA 词中形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·SHA 词中形式"> ‍ᠱ‍ </a></td>
       <td class="mgl"><a title="蒙古文·TSA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·NGA 词中短形式">  </a></td>
       <td class="mgl"><a title="蒙古文·笔日嘎第一形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·零">  </a></td>
+      <td class="mgl"><a title="蒙古文·I 词中第二形式"> ‍ᠢ᠋‍ </a></td>
+      <td class="mgl"><a title="蒙古文·GA 词首第一形式"> ᠭ </a></td>
+      <td class="mgl"><a title="蒙古文·CHI 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·I 独立形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·托忒·GAA 词中形式">  </a></td>
     </tr>
     <tr>
       <th>9</th>
@@ -214,18 +214,18 @@ categories: mongolian presentation-form
       <td class="mgl"><a title="蒙古文·PA 词末形式"> ‍ᠫ </a></td>
       <td class="mgl"><a title="蒙古文·SHA 词末形式">  </a></td>
       <td class="mgl"><a title="蒙古文·ZA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·托忒·JA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·CA 词中形式">  </a></td>
       <td class="mgl"><a title="蒙古文·带双修饰的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·一">  </a></td>
+      <td class="mgl"><a title="蒙古文·I 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·MA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·自由变体选择符一">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·I 词末第二形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·托忒·NIA 词中形式">  </a></td>
     </tr>
     <tr>
       <th>A</th>
@@ -233,18 +233,18 @@ categories: mongolian presentation-form
       <td class="mgl"><a title="蒙古文·GA 词末第一形式"> ‍ᠭ </a></td>
       <td class="mgl"><a title="蒙古文·TA 词中第二形式">  </a></td>
       <td class="mgl"><a title="蒙古文·ZA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·SSA 词中形式">  </a></td>
       <td class="mgl"><a title="蒙古文·带修饰旋转的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·二">  </a></td>
+      <td class="mgl"><a title="蒙古文·U 独立第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·LA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·自由变体选择符二">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·NGA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·托忒·DZA 词末形式">  </a></td>
     </tr>
     <tr>
       <th>B</th>
@@ -252,18 +252,18 @@ categories: mongolian presentation-form
       <td class="mgl"><a title="蒙古文·GA 词中第四形式"> ‍ᠭ᠏‍ </a>?</td>
       <td class="mgl"><a title="蒙古文·TA 词末形式">  </a></td>
       <td class="mgl"><a title="蒙古文·HAA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·ZA 词中形式">  </a></td>
       <td class="mgl"><a title="蒙古文·带双修饰旋转的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·三">  </a></td>
+      <td class="mgl"><a title="蒙古文·U 独立第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·SA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·自由变体选择符三">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·TTA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·DAGALGA">  </a></td>
     </tr>
     <tr>
       <th>C</th>
@@ -271,18 +271,18 @@ categories: mongolian presentation-form
       <td class="mgl"><a title="蒙古文·GA 词中第二形式"> ‍ᠭ‍ </a></td>
       <td class="mgl"><a title="蒙古文·DA 词中第一形式">  </a></td>
       <td class="mgl"><a title="蒙古文·ZRA 词末形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·镜像的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·四">  </a></td>
+      <td class="mgl"><a title="蒙古文·UE 独立第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·SHA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·自由变体选择符四">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·TTHA 词中形式">  </a></td>
+      <td></td>
     </tr>
     <tr>
       <th>D</th>
@@ -290,56 +290,56 @@ categories: mongolian presentation-form
       <td class="mgl"><a title="蒙古文·GA 词中第五形式"> ‍ᠭ᠌‍‍ </a></td>
       <td class="mgl"><a title="蒙古文·DA 词末第一形式">  </a></td>
       <td class="mgl"><a title="蒙古文·LHA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·阿努斯瓦勒 第二形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·带双修饰镜像的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·五">  </a></td>
+      <td class="mgl"><a title="蒙古文·UE 独立第二形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·TA 词首形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·元音间隔符无效形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·DDA 词中形式">  </a></td>
+      <td></td>
     </tr>
     <tr>
       <th>E</th>
       <td class="mgl"><a title="蒙古文字母·U词末第一形式"> ‍ᠦ </a></td>
       <td class="mgl"><a title="蒙古文·GA 词中第三形式"> ‍ᠭ᠍‍ </a></td>
       <td class="mgl"><a title="蒙古文·DA 词末第二形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·托忒·DZA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·维萨日嘎 第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·缠绕的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·六">  </a></td>
+      <td class="mgl"><a title="蒙古文·UE 词首第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·DA 词首第二形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·元音间隔符窄宽形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·NNA 词中形式">  </a></td>
+      <td></td>
     </tr>
     <tr>
       <th>F</th>
       <td class="mgl"><a title="蒙古文字母·U词末第二形式"> ‍ᠣ᠋ </a></td>
       <td class="mgl"><a title="蒙古文·GA 词末第二形式"> ‍ᠭ᠋ </a></td>
       <td class="mgl"><a title="蒙古文·CHA 词中形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·阿礼嘎利·A 独立第二形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td></td>
       <td class="mgl"><a title="蒙古文·带修饰缠绕的笔日嘎">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
-      <td class="mgl"><a title="蒙古文·UE 词中第三形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·数字·七">  </a></td>
+      <td class="mgl"><a title="蒙古文·UE 词中第二形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·YA 词首第一形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·元音间隔符全宽形式">  </a></td>
+      <td class="mgl"><a title="蒙古文·阿礼嘎利·TA 词中形式">  </a></td>
+      <td></td>
     </tr>
   </tbody>
   <tfoot>
