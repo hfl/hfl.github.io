@@ -1,16 +1,15 @@
 title: 飝龘圕
 email: huang_fl at sina.com
-description: >- # this means to ignore newlines until "baseurl:"
-  龙行龘龘，前程朤朤。
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: hfl
-# github_username:  hfl
+description: 龙行龘龘，前程朤朤。
+baseurl: ""
+url: ""
 timezone: Asia/Chongqing
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
-
+  - jekyll-paginate
+paginate: 15
+paginate_path: "/blog/page:num/"
 minima:
   date_format: "%Y年%-m月%-d日"
