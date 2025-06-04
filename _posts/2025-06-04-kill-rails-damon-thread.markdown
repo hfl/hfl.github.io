@@ -2,7 +2,7 @@
 layout: post
 title:  "中止 Rails 的守护线程"
 date:   2025-06-04 7:30:34 +0800
-categories: rails puma
+categories: rails
 ---
 
 Rails 现在的默认服务器是 Puma，简单迅速好用，但是当我们将其简单部署的时候——也就是
