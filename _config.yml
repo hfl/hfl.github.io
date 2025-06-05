@@ -10,6 +10,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
 paginate: 15
-paginate_path: "/blog/page:num/"
+paginate_path: "/posts/page:num/"
 minima:
   date_format: "%Y年%-m月%-d日"
