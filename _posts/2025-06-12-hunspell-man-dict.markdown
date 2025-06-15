@@ -9,102 +9,108 @@ categories: hunspell
 hunspell - Hunspell 词典和词缀文件格式
 
 ## 简介
-Hunspell(1) Hunspell 需要通过两个文件来定义一种语言的拼写检查：一个词典文件——包含单
-词和应用的标记，以及一个词缀文件——定义这些标记如何控制拼写。个人词典文件为可选项。
+Hunspell 需要通过两个文件来定义一种语言的拼写检查：一个词典文件——包含单
+词和应用的标记，以及一个词缀文件——定义这些标记如何控制拼写。私人定制的
+词典文件为非必选项。
 
 ### 词典文件
-一个词典文件（*.dic）包含一个单词表，每个单词一行。第一行是词典（不含个人词典）的单词
-数（用于优化哈希内存大小）。每个单词可包含一个斜线（"/"）和一个或多个标记，这写标记代
-表单词的属性，例如后缀。
+一个词典文件（*.dic）就是一个单词列表，每行一个单词。第一行是词典（不含私人
+定制词典）的行数（也就是单词数，此数字用于优化哈希内存大小）。每个单词可包
+含一个斜线（"/"）和一个或多个标记，这写标记代表单词的属性，例如后缀。
 
-注：词典单词也可包含斜线，需要通过 "\/" 转义。
+注：词典单词也可包含斜线，需要通过 `"\/"` 转义。
 
-词典中不仅要添加单词，还有添加一些词组以备拼写推荐使用——诸如常见拼写错误或者丢失空
-格等，如下例中 "alot" 和 "inspite"（参见有关常见拼写错误修改建议的 "REP" 和字段 "ph:"）：
+词典中不仅要添加单词，还有添加一些词组以备拼写检查时推荐使用——诸如常见拼
+写错误或者丢失空格等，如下例中 "alot" 和 "inspite"（参见有关常见拼写错误修改
+建议的 "REP" 和字段 "ph:"）：
 
     3
     word
     a lot
     in spite
 
-### 个人词典文件
-个人词典文件就是一个简单的单词列表。单词前带星号表明该词禁用。被斜线分割的第二个词设
-置词缀。
+### 私人定制的词典文件
+私人定制的词典文件就是一个简单的单词列表。词前带星号表明该词是禁用词。被斜
+线分开的第二个词用来设置词缀。
 
-      foo
-      Foo/Simpson
-      *bar
+    foo
+    Foo/Simpson
+    *bar
 
-此例中，"foo" 和 "Foo" 是个人词汇，带有词缀 Simpson (Foo's 等)的 Foo 会被识别，且 bar
-是禁词。
+此例中，"foo" 和 "Foo" 是私人定制词汇，带有词缀 Simpson (Foo's 等)的 Foo 会被
+识别，且 bar 是禁词。
 
-### 短示例
+### 示例
 词典文件：
 
-      3
-      hello
-      try/B
-      work/AB
+    3
+    hello
+    try/B
+    work/AB
 
 标记 B 和 A 定义了词的属性。
 
 词缀文件：
 
-      SET UTF-8
-      TRY esianrtolcdugmphbyfvkwzESIANRTOLCDUGMPHBYFVKWZ'
+    SET UTF-8
+    TRY esianrtolcdugmphbyfvkwzESIANRTOLCDUGMPHBYFVKWZ'
 
-      REP 2
-      REP f ph
-      REP ph f
+    REP 2
+    REP f ph
+    REP ph f
 
-      PFX A Y 1
-      PFX A 0 re .
+    PFX A Y 1
+    PFX A 0 re .
 
-      SFX B Y 2
-      SFX B 0 ed [^y]
-      SFX B y ied y
+    SFX B Y 2
+    SFX B 0 ed [^y]
+    SFX B y ied y
 
-词缀文件中，定义了前缀 A 和后缀 B。标记 A 定义了一个 `re-' 前缀。类 B 定义了两个 `-ed'
-后缀。第一个 B 后缀在单词的最后一个字符不是 `y' 时可添加。第二个后缀在单词以 `y' 结尾
-时添加。
+词缀文件中，定义了前缀 A 和后缀 B。标记 A 定义了一个 `re-` 前缀。类 B 定义了
+两个 `-ed` 后缀。第一个 B 后缀在单词的最后一个字符不是 `y` 时可添加。第二个
+后缀在单词以 `y` 结尾时添加。
 
-这个词典和词缀的所有组合是："hello", "try", "tried", "work", "worked", "rework", "reworked"。
+这个词典和词缀的所有组合是："hello", "try", "tried", "work", "worked", "rework",
+ "reworked"。
 
-### 词缀文件通用选项
+### 词缀文件通用参数项
 Hunspell 源码中包含了超过 80 中参数的使用示范。
 
-#### SET encoding
-设置字典文件和词词缀文件中单词和词素的字符编码。可能值：UTF-8，ISO8859-1 - ISO8859-10，
-ISO8859-13 - ISO8859-15，KOI8-R，KOI8-U，cp1251，ISCII-DEVANAGARI。
+#### SET 编码
+设置字典文件和词词缀文件中单词和词素的字符编码。可能值：UTF-8，ISO8859-1 - 
+ISO8859-10，ISO8859-13 - ISO8859-15，KOI8-R，KOI8-U，cp1251，ISCII-DEVANAGARI。
 
     SET UTF-8
 
-#### FLAG value
-设置标记类型。默认类型是扩展的 ASCII (8-bit) 字符。`UTF-8' 参数设置 UTF-8 编码的 Unicode
-字符标记。`long' 值设置双倍的扩展 ASCII 字符标记类型，`num' 设置数字标记类型。数字标记
-从 1 到 65000，在标记字段用逗号隔开。
+#### FLAG 值
+设置标记类型。默认类型是扩展的 ASCII (8-bit) 字符。`UTF-8` 参数设置 UTF-8 编
+码的 Unicode 字符标记。`long` 值设置双倍的扩展 ASCII 字符标记类型，`num` 设置
+数字标记类型。数字标记从 1 到 65000，在标记字段用逗号隔开。
+
 BUG: UTF-8 标记类型在 ARM 平台不能正常运行。
 
     FLAG long
 
 #### COMPLEXPREFIXES
-Set twofold prefix stripping (but single suffix stripping) eg.  for  morphologically
-complex languages with right-to-left writing system.
+设置双重前缀去除(but single suffix stripping) 例如从右到左书写的词法复杂的语言。
 
-#### LANG langcode
-为 Hunspell 的特定语言功能设置语言代码。用来激活阿塞拜疆文（LANG az）、土耳其文（LANG tr）和
-克里米亚鞑靼文（LANG  crh）的特定大小写功能，也并不仅仅是匈牙利文（LANG hu）的泛义的音节复杂
-技术规则。
+#### LANG 语言代码
+为 Hunspell 的特定语言功能设置语言代码。用来激活阿塞拜疆文（LANG az）、土耳
+其文（LANG tr）和克里米亚鞑靼文（LANG  crh）的特定大小写功能，也并不仅仅是匈
+牙利文（LANG hu）的泛义的音节复杂技术规则。
 
-#### IGNORE characters
-设置字典、词缀和输入词的忽略字符。很有用的可选字符，例如阿拉伯文 (harakat) 或者希伯来文
-(niqqud) 的变音符号（查看在 Hunspell 发布版本中测试词典的 tests/ignore.* 文件）。
+#### IGNORE 字符
+设置字典、词缀和输入词的忽略字符。很有用的可选字符，例如阿拉伯文 (harakat) 
+或者希伯来文(niqqud) 的变音符号（查看在 Hunspell 发布版本中测试词典的 tests/
+ignore.* 文件）。
+
+#### 词缀文件格式
 
     AF number_of_flag_vector_aliases
     AF flag_vector
 
-Hunspell 可以在词缀规则中用常见数字替代词缀标记（alias compression, see makealias tool)。第一个
-用 alias compression 的示例：
+Hunspell 可以在词缀规则中用常见数字替代词缀标记（alias compression, see 
+makealias tool)。第一个用 alias compression 的示例：
 
     3
     hello
@@ -136,33 +142,38 @@ AF 词缀定义文件：
 Hunspell 可以在词最文件中用序数替换词性数据（alias compression）。查阅示例中的
 tests/alias*。
 
-### AFFIX 文件中的建议选项
-Hunspell 建议参数可以优化默认的 n-gram （类似在词典单词中基于常见的 1, 2, 3, 4 个字符长度的字符
-序列检索）算法的字符替换和删除建议等。建议用 REP 来修正输入和语言特定问题，因为 REP 建议具有建
-议的最高级权限。PHONE 主要针对不以发音为基础的语言系统。
+### AFFIX 文件中的建议参数项
+Hunspell 建议参数可以优化默认的 n-gram （类似在词典单词中基于常见的 1, 2, 3, 
+4 个字符长度的字符序列检索）算法的字符替换和删除建议等。建议用 REP 来修正输
+入和语言特定问题，因为 REP 建议具有建议的最高级权限。PHONE 主要针对不以发音
+为基础的语言系统。
 
 对于简短的常见拼写错误，用 ph: field （见后面）给出最佳建议很重要。
 
-#### KEY characters_separated_by_vertical_line_optionally
-Hunspell 检索和建议有相邻键字符键构成的单词。而不是在字符串中相邻的字构成的字符串。建议 KEY
-参数基于 QWERTY 和 Dvorak 键盘布局：
+#### KEY 竖线分割的字符
+Hunspell 检索和建议有相邻键字符键构成的单词。而不是在字符串中相邻的字构成的
+字符串。建议 KEY 参数基于 QWERTY 和 Dvorak 键盘布局：
 
     KEY qwertyuiop|asdfghjkl|zxcvbnm
     KEY pyfgcrl|aeouidhtns|qjkxbmwvz
 
-使用第一个 QWERTY 布局，Hunspell 对于 "*nide" 会建议 "nude" 和 "node"。一个字符会有更多的邻键：
+使用第一个 QWERTY 布局，Hunspell 对于 "*nide" 会建议 "nude" 和 "node"。一个字
+符会有更多的邻键：
 
     KEY qwertzuop|yxcvbnm|qaw|say|wse|dsx|sy|edr|fdc|dx|rft|gfv|fc|tgz|hgb|gv|zhu|jhn|hb|uji|kjm|jn|iko|lkm
 
-#### TRY characters
-      当 Hunspell 通过 TRY 字符发现一个可能的错误输入单词时会建议正确的词形。TRY 参数大小写敏感。
+#### TRY 字符
+当 Hunspell 通过 TRY 字符发现一个可能的错误输入单词时会建议正确的词形。TRY 
+参数大小写敏感。
 
 #### NOSUGGEST flag
-带有 NOSUGGEST 标记的单词不会推荐修改词（但仍会接受正确输入）。建议为粗俗和淫秽词语添加标记
+带有 NOSUGGEST 标记的单词不会推荐修改词（但仍会接受正确输入）。建议为粗俗和
+淫秽词语添加标记
 （参见 SUBSTANDARD）。
 
 #### MAXCPDSUGS num
-设置由组合规则生成的推荐词的最大值。推荐词的最大值可能大于同样的 1 字符距离类型。
+设置由组合规则生成的推荐词的最大值。推荐词的最大值可能大于同样的 1 字符距离
+类型。
 
 #### MAXNGRAMSUGS num
 设置 n-gram 推荐词最大值。0 值意味着关闭 n-gram 推荐（参见 MAXDIFF）。
@@ -229,13 +240,13 @@ Use parenthesized groups for character sequences (eg. for composed Unicode chara
     MAP ﬁ(fi)  ("fi" compatibility characters for Unicode fi ligature)
     MAP (ó)o   (composed Unicode character: ó with bottom dot)
 
-    PHONE number_of_phone_definitions
+    PHONE 语音定义总行数
     PHONE 替换内容
 
-    PHONE 借鉴了来自于 Aspell 的表驱动的音标转换算法。它对于不以发音为基础的语言系统
-    是很有用的。你可以添加一个全部的字母转换和其他转化到特定字母序列的规则。更多细节
-    参阅文档 http://aspell.net/man-html/Phonetic-Code.html。注：多字节 UTF-8 字符还不能支
-    持括号表达式。破折号表达式可用于字节，但是不支持 UTF-8 字符。
+PHONE 借鉴了来自于 Aspell 的表驱动的音标转换算法。它对于不以发音为基础的语言系统
+是很有用的。你可以添加一个全部的字母转换和其他转化到特定字母序列的规则。更多细节
+参阅文档 http://aspell.net/man-html/Phonetic-Code.html。注：多字节 UTF-8 字符还不能支
+持括号表达式。破折号表达式可用于字节，但是不支持 UTF-8 字符。
 
 #### WARN 标记
 此标记很少词能用到，这些词通常是经常拼写错误的，查阅 Hunspell 命令行的 -r 参数和
@@ -244,67 +255,66 @@ FORBIDWARN 选项。
 #### FORBIDWARN
 使用 WARN 标记不能被拼写检查接受的词使用此参数。
 
-### 组合选项
-       BREAK 定义截断行数
+### 组合项
+#### BREAK 项
+ 
+    BREAK 定义截断的总行数
+    BREAK 符号或者符号序列
 
-       BREAK 符号或者符号序列
-              Define new break points for breaking words and checking word parts separately. Use ^
-              and  $ to delete characters at end and start of the word. Rationale: useful for com‐
-              pounding with joining character or strings (for example, hyphen in English and  Ger‐
-              man  or  hyphen and n-dash in Hungarian). Dashes are often bad break points for tok‐
-              enization, because compounds with dashes may contain not valid  parts,  too.)   With
-              BREAK, Hunspell can check both side of these compounds, breaking the words at dashes
-              and n-dashes:
+Define new break points for breaking words and checking word parts separately. Use ^
+and  $ to delete characters at end and start of the word. Rationale: useful for com‐
+pounding with joining character or strings (for example, hyphen in English and  Ger‐
+man  or  hyphen and n-dash in Hungarian). Dashes are often bad break points for tok‐
+enization, because compounds with dashes may contain not valid  parts,  too.)   With
+BREAK, Hunspell can check both side of these compounds, breaking the words at dashes
+and n-dashes:
 
-              BREAK 2
-              BREAK -
-              BREAK --    # n-dash
+    BREAK 2
+    BREAK -
+    BREAK --    # n-dash
 
-       Breaking are recursive, so foo-bar, bar-foo and foo-foo--bar-bar would be valid  compounds.
-       Note: The default word break of Hunspell is equivalent of the following BREAK definition:
+    BREAK 3
+    BREAK -
+    BREAK ^-
+    BREAK -$
 
-              BREAK 3
-              BREAK -
-              BREAK ^-
-              BREAK -$
+Hunspell doesn't accept the "-word" and "word-" forms by this BREAK definition:
 
-       Hunspell doesn't accept the "-word" and "word-" forms by this BREAK definition:
+    BREAK 1
+    BREAK -
 
-              BREAK 1
-              BREAK -
+Switching off the default values:
 
-       Switching off the default values:
+    BREAK 0
 
-              BREAK 0
+Note  II: COMPOUNDRULE is better for handling dashes and other  compound joining characters
+or character strings. Use BREAK, if you want to check words with dashes  or  other  joining
+characters and there is no time or possibility to describe precise compound rules with COM‐
+POUNDRULE (COMPOUNDRULE handles only the suffixation of the last word part  of  a  compound
+word).
 
-       Note  II: COMPOUNDRULE is better for handling dashes and other  compound joining characters
-       or character strings. Use BREAK, if you want to check words with dashes  or  other  joining
-       characters and there is no time or possibility to describe precise compound rules with COM‐
-       POUNDRULE (COMPOUNDRULE handles only the suffixation of the last word part  of  a  compound
-       word).
+Note III: For command line spell checking of words with extra characters, set WORDCHARS pa‐
+rameters: WORDCHARS --- (see tests/break.*) example
 
-       Note III: For command line spell checking of words with extra characters, set WORDCHARS pa‐
-       rameters: WORDCHARS --- (see tests/break.*) example
+    COMPOUNDRULE number_of_compound_definitions
+    COMPOUNDRULE compound_pattern
 
-       COMPOUNDRULE number_of_compound_definitions
+Define custom compound patterns with a regex-like syntax.  The first COMPOUNDRULE is
+a  header  with  the number of the following COMPOUNDRULE definitions. Compound pat‐
+terns consist compound flags, parentheses, star and question mark meta characters. A
+flag  followed by a `*' matches a word sequence of 0 or more matches of words signed
+with this compound flag.  A flag followed by a `?' matches a word sequence of 0 or 1
+matches of a word signed with this compound flag.  See tests/compound*.* examples.
 
-       COMPOUNDRULE compound_pattern
-              Define custom compound patterns with a regex-like syntax.  The first COMPOUNDRULE is
-              a  header  with  the number of the following COMPOUNDRULE definitions. Compound pat‐
-              terns consist compound flags, parentheses, star and question mark meta characters. A
-              flag  followed by a `*' matches a word sequence of 0 or more matches of words signed
-              with this compound flag.  A flag followed by a `?' matches a word sequence of 0 or 1
-              matches of a word signed with this compound flag.  See tests/compound*.* examples.
+Note: en_US dictionary of OpenOffice.org uses COMPOUNDRULE for ordinal number recog‐
+nition (1st, 2nd, 11th, 12th, 22nd, 112th, 1000122nd etc.).
 
-              Note: en_US dictionary of OpenOffice.org uses COMPOUNDRULE for ordinal number recog‐
-              nition (1st, 2nd, 11th, 12th, 22nd, 112th, 1000122nd etc.).
+Note II: In the case of long and numerical flag types use only parenthesized  flags:
+(1500)*(2000)?
 
-              Note II: In the case of long and numerical flag types use only parenthesized  flags:
-              (1500)*(2000)?
-
-              Note  III: COMPOUNDRULE flags work completely separately from the compounding mecha‐
-              nisms using COMPOUNDFLAG, COMPOUNDBEGIN, etc. compound flags. (Use  these  flags  on
-              different entries for words).
+Note  III: COMPOUNDRULE flags work completely separately from the compounding mecha‐
+nisms using COMPOUNDFLAG, COMPOUNDBEGIN, etc. compound flags. (Use  these  flags  on
+different entries for words).
 
        COMPOUNDMIN num
               Minimum length of words used for compounding.  Default value is 3 letters.
@@ -401,7 +411,7 @@ FORBIDWARN 选项。
        SYLLABLENUM flags
               Need for special compounding rules in Hungarian.
 
-AFFIX FILE OPTIONS FOR AFFIX CREATION
+### 用于词缀创建的词缀文件选项
        PFX flag cross_product number
 
        PFX flag stripping prefix [condition [morphological_fields...]]
@@ -444,7 +454,7 @@ AFFIX FILE OPTIONS FOR AFFIX CREATION
 
               (5) Optional morphological fields separated by spaces or tabulators.
 
-AFFIX FILE OTHER OPTIONS
+### 词缀文件其他参数
        CIRCUMFIX flag
               Affixes signed with CIRCUMFIX flag may be on a word when this word also has a prefix
               with CIRCUMFIX flag and vice versa (see circumfix.* test files in the source distri‐
@@ -507,7 +517,7 @@ AFFIX FILE OTHER OPTIONS
               can handle this special casing with the CHECKSHARPS declaration (see  also  KEEPCASE
               flag and tests/germancompounding example) in both spelling and suggestion.
 
-Morphological analysis
+### 词法分析
        Hunspell's  dictionary items and affix rules may have optional space or tabulator separated
        morphological description fields, started with 3-character (two letters and a colon)  field
        IDs:
@@ -675,7 +685,7 @@ Optional data fields
 
        tp:    Planned: terminal prefix.
 
-Twofold suffix stripping
+### 双重后缀移除
        Ispell's  original algorithm strips only one suffix. Hunspell can strip another one yet (or
        a plus prefix in COMPLEXPREFIXES mode).
 
@@ -712,7 +722,7 @@ Twofold suffix stripping
        suffix rules, compared with a Hunspell implementation. In our practice, we could have elab‐
        orated the Hungarian inflectional morphology with twofold suffix stripping.
 
-Extended affix classes
+### 扩展词缀类
        Hunspell can handle more than 65000 affix classes.  There are three new syntax  for  giving
        flags in affix and dictionary files.
 
@@ -738,7 +748,7 @@ Extended affix classes
 
        The third one is the Unicode character flags.
 
-Homonyms
+### 同形异义词
        Hunspell's dictionary can contain repeating elements that are homonyms:
 
                work/A    po:verb
@@ -764,7 +774,7 @@ Homonyms
 
        This feature also gives a way to forbid illegal prefix/suffix combinations.
 
-Prefix--suffix dependencies
+### 前缀后缀依赖
        An  interesting  side-effect  of multi-step stripping is, that the appropriate treatment of
        circumfixes now comes for free.  For instance, in Hungarian, superlatives are formed by si‐
        multaneous  prefixation  of  leg-  and suffixation of -bb to the adjective base.  A problem
@@ -820,7 +830,7 @@ Prefix--suffix dependencies
               > undrinks
               Unknown word.
 
-Circumfix
+### 双向词缀
        Conditional affixes implemented by a continuation class are not enough for circumfixes, be‐
        cause a circumfix is one affix in morphology. We also need  CIRCUMFIX  option  for  correct
        morphological analysis.
@@ -859,7 +869,7 @@ Circumfix
               > legeslegnagyobb
               nagy[MN]+SUPERSUPERLATIVE
 
-Compounds
+### 组合
        Allowing free compounding yields decrease in precision of recognition, not to mention stem‐
        ming and morphological analysis.  Although lexical switches are introduced to license  com‐
        pounding of bases by Ispell, this proves not to be restrictive enough. For example:
@@ -978,7 +988,7 @@ Compounds
               Computerarbeit
               Computerarbeits-
               Arbeitscomputer
-              Arbeitscomputern
+        Circumfix      Arbeitscomputern
               Computerarbeitscomputer
               Computerarbeitscomputern
               Arbeitscomputerarbeit
@@ -1000,7 +1010,7 @@ Compounds
               ComputerArbeitscomputer
               Arbeitscomputerarbeits
               Computerarbeits-computer
-              Arbeitsnehmer
+        Circumfix      Arbeitsnehmer
 
        This solution is still not ideal, however, and will be replaced  by  a  pattern-based  com‐
        pound-checking  algorithm  which is closely integrated with input buffer tokenization. Pat‐
@@ -1009,7 +1019,7 @@ Compounds
        of hyphens). The patterns are matched against potential segmentations of compounds  to  as‐
        sess wellformedness.
 
-Unicode character encoding
+### Unicode 字符编码
        Both  Ispell  and  Myspell  use 8-bit ASCII character encoding, which is a major deficiency
        when it comes to scalability.  Although a language like  Hungarian  has  a  standard  ASCII
        character  set  (ISO  8859-2),  it fails to allow a full implementation of Hungarian ortho‐
@@ -1038,51 +1048,34 @@ Unicode character encoding
        (0-20%) time overhead and minimal or reasonable memory overhead depends from  the  language
        (its UTF-8 encoding and affixation).
 
-Conversion of aspell dictionaries
-       Aspell dictionaries can be easily converted into hunspell. Conversion steps:
+### Aspell 字典转换
+Aspell 字典很容易转换到 hunspell。转换步骤：
 
-       dictionary (xx.cwl -> xx.wl):
+辞典 (xx.cwl -> xx.wl):
 
-       preunzip xx.cwl
-       wc -l < xx.wl > xx.dic
-       cat xx.wl >> xx.dic
+~~~ shell
+preunzip xx.cwl
+wc -l < xx.wl > xx.dic
+cat xx.wl >> xx.dic
+~~~
 
-       affix file
+词缀文件
 
-       If the affix file exists, copy it:
-       cp xx_affix.dat xx.aff
-       If not, create it with the suitable character encoding (see xx.dat)
-       echo "SET ISO8859-x" > xx.aff
-       or
-       echo "SET UTF-8" > xx.aff
+如果有词缀文件，复制：
+~~~ shell
+cp xx_affix.dat xx.aff
+~~~
+如果没有，用相应的字符编码创建（查看 xx.dat）
+~~~ shell
+echo "SET ISO8859-x" > xx.aff
+# 或者
+echo "SET UTF-8" > xx.aff
+~~~
 
-       It's  useful to add a TRY option with the characters of the dictionary with frequency order
-       to set edit distance suggestions:
-       echo "TRY qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM" >>xx.aff
+为字典的字符频率设置单词编辑距离建议添加 TRY 项很有用：
 
-Conversion of aspell dictionaries
-       Aspell dictionaries can be easily converted into hunspell. Conversion steps:
-
-       dictionary (xx.cwl -> xx.wl):
-
-       preunzip xx.cwl
-       wc -l < xx.wl > xx.dic
-       cat xx.wl >> xx.dic
-
-       affix file
-
-       If the affix file exists, copy it:
-       cp xx_affix.dat xx.aff
-       If not, create it with the suitable character encoding (see xx.dat)
-       echo "SET ISO8859-x" > xx.aff
-       or
-       echo "SET UTF-8" > xx.aff
-
-       It's useful to add a TRY option with the characters of the dictionary with frequency  order
-       to set edit distance suggestions:
-       echo "TRY qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM" >>xx.aff
-
-SEE ALSO
-       hunspell (1), ispell (1), ispell (4)
-
-                                            2017-09-20                                 hunspell(5)
+~~~ shell
+echo "TRY qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM" >>xx.aff
+~~~
+参阅
+    hunspell (1), ispell (1), ispell (4)
