@@ -74,7 +74,7 @@ Hunspell 需要通过两个文件来定义一种语言的拼写检查：一个�
  "reworked"。
 
 ### 词缀文件通用参数项
-Hunspell 源码中包含了超过 80 中参数的使用示范。
+Hunspell 源码中包含了超过 80 种参数的使用示范。
 
 #### SET 编码
 设置字典文件和词词缀文件中单词和词素的字符编码。可能值：UTF-8，ISO8859-1 - 
@@ -151,7 +151,7 @@ Hunspell 建议参数可以优化默认的 n-gram （类似在词典单词中基
 对于简短的常见拼写错误，用 ph: field （见后面）给出最佳建议很重要。
 
 #### KEY 竖线分割的字符
-Hunspell 检索和建议有相邻键字符键构成的单词。而不是在字符串中相邻的字构成的
+Hunspell 检索和建议有相邻键字符键构成的单词，而不是在字符串中相邻的字构成的
 字符串。建议 KEY 参数基于 QWERTY 和 Dvorak 键盘布局：
 
     KEY qwertyuiop|asdfghjkl|zxcvbnm
@@ -189,14 +189,16 @@ Hunspell 检索和建议有相邻键字符键构成的单词。而不是在字�
 空格关闭推荐词。
 
 #### SUGSWITHDOTS
-如果输入词以点结束，启用点启动推荐。（不适用于 LibreOffice 词典，因为 LibreOffice
+如果输入词以点结束，启用点推荐。（不适用于 LibreOffice 词典，因为 LibreOffice
 有自动启用点推荐机制。）
+
+REP 参数：
 
     REP 替换定义行数
     REP 替换什么
 
 此表规定首先尝试修改的词汇。第一行 REP 是此表表头表明接下来的多少行是 REP 数据。
-通过此表，Hunspell 为典型超过一个字母的错误拼写推荐正确的形式（查阅“ph:”）.
+通过此表，Hunspell 为典型超过一个字母的错误拼写推荐正确的形式（查阅“ph:”）。
 搜索字符串支持正则表达式的边界符（^ 和 $）。例如一个可能的英文处理错误拼写辅音
 替换表定义如下：
 
@@ -207,7 +209,8 @@ Hunspell 检索和建议有相邻键字符键构成的单词。而不是在字�
     REP ^cooccurr co-occurr
     REP ^alot$ a_lot
 
-注 I：这对大多数一个字符的错误拼写很有用，另：用 REP 你可以添加更高级的 TRY 建议子集（
+注 I：这对大多数一个字符的错误拼写很有用，另：用 REP 你可以添加更高级的 TRY 
+建议子集（
 建议列表以 REP 建议来时）。
 
 注 II：建议分割单词以下划线代替空格：
@@ -217,36 +220,37 @@ Hunspell 检索和建议有相邻键字符键构成的单词。而不是在字�
 
 注  III：替换表可通过 CHECKCOMPOUNDREP 参数用于更严格的词组检查。
 
+MAP 参数：
+
     MAP 映射定义行数
     MAP 相关字符或者括号内的字符序列组成的字符串
 
-We can define language-dependent information on characters and  character  sequences
-that  should  be considered related (i.e. nearer than other chars not in the set) in
-the affix file (.aff)  by a map table.  With this table, Hunspell  can  suggest  the
-right  forms  for  words, which incorrectly choose the wrong letter or letter groups
-from a related set more than once in a word (see REP).
+我们通过词缀文件的映射表来定义基于语言特点的通常具有一定关联的字符或者字符
+串（例如，可以认为在字符集中最接近的）。通过此表，Hunspell 可以猜出单词的正
+确形式——通过不断从错字和错词组集合中校正而得到正确形式（参阅 REP）。
 
-For example a possible mapping could be for the German umlauted ü versus the regular
-u;  the  word  Frühstück  really should be written with umlauted u's and not regular
-ones
+例如，可以用映射来对应德语中带元音变音符的 ü 与正常的 u；单词 Frühstück 应当
+用带元音变音符的 ü，而不是常规的 u
 
     MAP 1
     MAP uü
 
-Use parenthesized groups for character sequences (eg. for composed Unicode characters):
+用括号分组字符序列（例如组合的 Unicode 字符）：
 
     MAP 3
-    MAP ß(ss)  (character sequence)
-    MAP ﬁ(fi)  ("fi" compatibility characters for Unicode fi ligature)
-    MAP (ó)o   (composed Unicode character: ó with bottom dot)
+    MAP ß(ss)  (字符序列)
+    MAP ﬁ(fi)  (Unicode 连字的 "fi" 兼容字符)
+    MAP (ó)o   (组合 Unicode 字符：带底点的 ó)
+
+PHONE 参数：
 
     PHONE 语音定义总行数
     PHONE 替换内容
 
-PHONE 借鉴了来自于 Aspell 的表驱动的音标转换算法。它对于不以发音为基础的语言系统
-是很有用的。你可以添加一个全部的字母转换和其他转化到特定字母序列的规则。更多细节
-参阅文档 http://aspell.net/man-html/Phonetic-Code.html。注：多字节 UTF-8 字符还不能支
-持括号表达式。破折号表达式可用于字节，但是不支持 UTF-8 字符。
+PHONE 借鉴了来自于 Aspell 的表驱动的音标转换算法。它对于不以发音为基础的语言
+系统是很有用的。你可以添加一个全部的字母转换和其他转化到特定字母序列的规则。
+更多细节参阅文档 http://aspell.net/man-html/Phonetic-Code.html。注：多字节 UTF-8 
+字符还不能支持括号表达式。破折号表达式可用于字节，但是不支持 UTF-8 字符。
 
 #### WARN 标记
 此标记很少词能用到，这些词通常是经常拼写错误的，查阅 Hunspell 命令行的 -r 参数和
@@ -261,13 +265,11 @@ FORBIDWARN 选项。
     BREAK 定义截断的总行数
     BREAK 符号或者符号序列
 
-Define new break points for breaking words and checking word parts separately. Use ^
-and  $ to delete characters at end and start of the word. Rationale: useful for com‐
-pounding with joining character or strings (for example, hyphen in English and  Ger‐
-man  or  hyphen and n-dash in Hungarian). Dashes are often bad break points for tok‐
-enization, because compounds with dashes may contain not valid  parts,  too.)   With
-BREAK, Hunspell can check both side of these compounds, breaking the words at dashes
-and n-dashes:
+定义分词和断词的新断点，用 `^` 和 `$` 删除单词结尾和开始的字符。理由：这对于
+使用连接符和字符串的 com‐pounding 很用用（例如，英语和 Ger‐man 中的横线或者
+匈牙利文中的多横线）。横线对于 tok‐enization 来说是不好的断点，因为带有横线
+的合成词可能会包含无效部分。用 BREAK，Hunspell 可以检查这些合成词，既包括横线
+也包括多横线：
 
     BREAK 2
     BREAK -
@@ -278,244 +280,221 @@ and n-dashes:
     BREAK ^-
     BREAK -$
 
-Hunspell doesn't accept the "-word" and "word-" forms by this BREAK definition:
+Hunspell 通过 BREAK 定义将不接受 "-word" 和 "word-" 形式的词：
 
     BREAK 1
     BREAK -
 
-Switching off the default values:
+关闭默认值：
 
     BREAK 0
 
-Note  II: COMPOUNDRULE is better for handling dashes and other  compound joining characters
-or character strings. Use BREAK, if you want to check words with dashes  or  other  joining
-characters and there is no time or possibility to describe precise compound rules with COM‐
-POUNDRULE (COMPOUNDRULE handles only the suffixation of the last word part  of  a  compound
-word).
+注 II：COMPOUNDRULE 更适合处理横线和其他合成连接符或者字符串。用 BREAK，如果你想要检查词的横线或者其他连接符，且没时间或者不能用 COMPOUNDRULE 精准描述合成规则（COMPOUNDRULE 只处理合成词的最后部分或者后缀）。
 
-Note III: For command line spell checking of words with extra characters, set WORDCHARS pa‐
-rameters: WORDCHARS --- (see tests/break.*) example
+注 III：对于使用命令行做带有扩展字符的拼写检查时，设置 WORDCHARS 参数：WORDCHARS
+ --- （查阅 tests/break.*）示例
 
-    COMPOUNDRULE number_of_compound_definitions
+COMPOUNDRULE 格式：
+
+    COMPOUNDRULE 定义的行数
     COMPOUNDRULE compound_pattern
 
-Define custom compound patterns with a regex-like syntax.  The first COMPOUNDRULE is
-a  header  with  the number of the following COMPOUNDRULE definitions. Compound pat‐
-terns consist compound flags, parentheses, star and question mark meta characters. A
-flag  followed by a `*' matches a word sequence of 0 or more matches of words signed
-with this compound flag.  A flag followed by a `?' matches a word sequence of 0 or 1
-matches of a word signed with this compound flag.  See tests/compound*.* examples.
+用类正则语法定义定制组合模式。第一个 COMPOUNDRULE 是表头，指定接下来的 COMPOUNDRULE 定义行数。组合模式包括组合 flag，括号，星号和问号元字符。一个 flag 跟着一个 `*` 匹
+配带有这个组合 flag 的 0 到多个字符的词。一个 flag 跟着一个 `?` 匹配有该 flag
+的 0 或者 1 个字符的词。查阅 tests/compound*.* 示例。
 
-Note: en_US dictionary of OpenOffice.org uses COMPOUNDRULE for ordinal number recog‐
-nition (1st, 2nd, 11th, 12th, 22nd, 112th, 1000122nd etc.).
+注：OpenOffice.org 的 en_US 词典用 COMPOUNDRULE 做序数识别（1st, 2nd, 11th, 12th, 22nd, 112th, 1000122nd 等）。
 
-Note II: In the case of long and numerical flag types use only parenthesized  flags:
+注 II：long 数字 flag 类型使用括号 flag：
 (1500)*(2000)?
 
-Note  III: COMPOUNDRULE flags work completely separately from the compounding mecha‐
-nisms using COMPOUNDFLAG, COMPOUNDBEGIN, etc. compound flags. (Use  these  flags  on
-different entries for words).
+注 III：COMPOUNDRULE flag 运行完全同使用组合机制的 COMPOUNDFLAG、COMPOUNDBEGIN 等组合 flag 不同（在不同的词条用这些 flag）。
 
-       COMPOUNDMIN num
-              Minimum length of words used for compounding.  Default value is 3 letters.
+##### COMPOUNDMIN num
+使用组合的最小长度。默认值是 3 个字母。
 
-       COMPOUNDFLAG flag
-              Words  signed  with  COMPOUNDFLAG may be in compound words (except when word shorter
-              than COMPOUNDMIN). Affixes with COMPOUNDFLAG also  permits  compounding  of  affixed
-              words.
+##### COMPOUNDFLAG flag
 
-       COMPOUNDBEGIN flag
-              Words  signed  with  COMPOUNDBEGIN (or with a signed affix) may be first elements in
-              compound words.
+Words  signed  with  COMPOUNDFLAG may be in compound words (except when word shorter
+than COMPOUNDMIN). Affixes with COMPOUNDFLAG also  permits  compounding  of  affixed
+words.
 
-       COMPOUNDLAST flag
-              Words signed with COMPOUNDLAST (or with a signed affix) may be last elements in com‐
-              pound words.
+##### COMPOUNDBEGIN flag
+Words  signed  with  COMPOUNDBEGIN (or with a signed affix) may be first elements in
+compound words.
 
-       COMPOUNDMIDDLE flag
-              Words  signed with COMPOUNDMIDDLE (or with a signed affix) may be middle elements in
-              compound words.
+##### COMPOUNDLAST flag
+Words signed with COMPOUNDLAST (or with a signed affix) may be last elements in com‐
+pound words.
 
-       ONLYINCOMPOUND flag
-              Suffixes signed with ONLYINCOMPOUND flag may be only inside of compounds  (Fuge-ele‐
-              ments  in  German,  fogemorphemes  in Swedish).  ONLYINCOMPOUND flag works also with
-              words (see tests/onlyincompound.*).  Note: also valuable to flag  compounding  parts
-              which are not correct as a word by itself.
+##### COMPOUNDMIDDLE flag
+Words  signed with COMPOUNDMIDDLE (or with a signed affix) may be middle elements in
+compound words.
 
-       COMPOUNDPERMITFLAG flag
-              Prefixes  are allowed at the beginning of compounds, suffixes are allowed at the end
-              of compounds by default.  Affixes with COMPOUNDPERMITFLAG  may  be  inside  of  com‐
-              pounds.
+##### ONLYINCOMPOUND flag
+Suffixes signed with ONLYINCOMPOUND flag may be only inside of compounds  (Fuge-ele‐
+ments  in  German,  fogemorphemes  in Swedish).  ONLYINCOMPOUND flag works also with
+words (see tests/onlyincompound.*).  Note: also valuable to flag  compounding  parts
+which are not correct as a word by itself.
 
-       COMPOUNDFORBIDFLAG flag
-              Suffixes  with  this  flag forbid compounding of the affixed word.  Dictionary words
-              with this flag are removed from the beginning and middle of compound words, overrid‐
-              ing the effect of COMPOUNDPERMITFLAG.
+##### COMPOUNDPERMITFLAG flag
+Prefixes  are allowed at the beginning of compounds, suffixes are allowed at the end
+of compounds by default.  Affixes with COMPOUNDPERMITFLAG  may  be  inside  of  com‐
+pounds.
 
-       COMPOUNDMORESUFFIXES
-              Allow twofold suffixes within compounds.
+##### COMPOUNDFORBIDFLAG flag
+Suffixes  with  this  flag forbid compounding of the affixed word.  Dictionary words
+with this flag are removed from the beginning and middle of compound words, overrid‐
+ing the effect of COMPOUNDPERMITFLAG.
 
-       COMPOUNDROOT flag
-              COMPOUNDROOT  flag signs the compounds in the dictionary (Now it is used only in the
-              Hungarian language specific code).
+##### COMPOUNDMORESUFFIXES
+Allow twofold suffixes within compounds.
 
-       COMPOUNDWORDMAX number
-              Set maximum word count in a compound word. (Default is unlimited.)
+##### COMPOUNDROOT flag
+COMPOUNDROOT  flag signs the compounds in the dictionary (Now it is used only in the
+Hungarian language specific code).
 
-       CHECKCOMPOUNDDUP
-              Forbid word duplication in compounds (e.g. foofoo).
+##### COMPOUNDWORDMAX number
+Set maximum word count in a compound word. (Default is unlimited.)
 
-       CHECKCOMPOUNDREP
-              Forbid compounding, if the (usually bad) compound word may be  a  non-compound  word
-              with a REP fault. Useful for languages with `compound friendly' orthography.
+##### CHECKCOMPOUNDDUP
+Forbid word duplication in compounds (e.g. foofoo).
 
-       CHECKCOMPOUNDCASE
-              Forbid upper case characters at word boundaries in compounds.
+##### CHECKCOMPOUNDREP
+Forbid compounding, if the (usually bad) compound word may be  a  non-compound  word
+with a REP fault. Useful for languages with `compound friendly' orthography.
 
-       CHECKCOMPOUNDTRIPLE
-              Forbid  compounding, if compound word contains triple repeating letters (e.g. foo|ox
-              or xo|oof). Bug: missing multi-byte character support in UTF-8 encoding (works  only
-              for 7-bit ASCII characters).
+##### CHECKCOMPOUNDCASE
+Forbid upper case characters at word boundaries in compounds.
 
-       SIMPLIFIEDTRIPLE
-              Allow  simplified  2-letter forms of the compounds forbidden by CHECKCOMPOUNDTRIPLE.
-              It's useful  for  Swedish  and  Norwegian  (and  for  the  old  German  orthography:
-              Schiff|fahrt -> Schiffahrt).
+##### CHECKCOMPOUNDTRIPLE
+Forbid  compounding, if compound word contains triple repeating letters (e.g. foo|ox
+or xo|oof). Bug: missing multi-byte character support in UTF-8 encoding (works  only
+for 7-bit ASCII characters).
 
-       CHECKCOMPOUNDPATTERN number_of_checkcompoundpattern_definitions
+##### SIMPLIFIEDTRIPLE
+Allow  simplified  2-letter forms of the compounds forbidden by CHECKCOMPOUNDTRIPLE.
+It's useful  for  Swedish  and  Norwegian  (and  for  the  old  German  orthography:
+Schiff|fahrt -> Schiffahrt).
 
-       CHECKCOMPOUNDPATTERN endchars[/flag] beginchars[/flag] [replacement]
-              Forbid  compounding,  if the first word in the compound ends with endchars, and next
-              word begins with beginchars and (optionally) they have the requested flags.  The op‐
-              tional replacement parameter allows simplified compound form.
+##### CHECKCOMPOUNDPATTERN number_of_checkcompoundpattern_definitions
 
-              The  special  "endchars"  pattern  0  (zero) limits the rule to the unmodified stems
-              (stems and stems with zero affixes):
+##### CHECKCOMPOUNDPATTERN endchars[/flag] beginchars[/flag] [replacement]
+Forbid  compounding,  if the first word in the compound ends with endchars, and next
+word begins with beginchars and (optionally) they have the requested flags.  The op‐
+tional replacement parameter allows simplified compound form.
 
-              CHECKCOMPOUNDPATTERN 0/x /y
+The  special  "endchars"  pattern  0  (zero) limits the rule to the unmodified stems
+(stems and stems with zero affixes):
 
-       Note: COMPOUNDMIN doesn't work correctly with the compound word alternation, so it may need
-       to set COMPOUNDMIN to lower value.
+CHECKCOMPOUNDPATTERN 0/x /y
 
-       FORCEUCASE flag
-              Last word part of a compound with flag FORCEUCASE forces capitalization of the whole
-              compound word. Eg. Dutch word "straat" (street) with FORCEUCASE flags  will  allowed
-              only in capitalized compound forms, according to the Dutch spelling rules for proper
-              names.
+Note: COMPOUNDMIN doesn't work correctly with the compound word alternation, so it may need
+to set COMPOUNDMIN to lower value.
 
-       COMPOUNDSYLLABLE max_syllable vowels
-              Need for special compounding rules in Hungarian.  First  parameter  is  the  maximum
-              syllable number, that may be in a compound, if words in compounds are more than COM‐
-              POUNDWORDMAX.  Second parameter is the list of vowels (for calculating syllables).
+##### FORCEUCASE flag
+Last word part of a compound with flag FORCEUCASE forces capitalization of the whole
+compound word. Eg. Dutch word "straat" (street) with FORCEUCASE flags  will  allowed
+only in capitalized compound forms, according to the Dutch spelling rules for proper
+names.
 
-       SYLLABLENUM flags
-              Need for special compounding rules in Hungarian.
+##### COMPOUNDSYLLABLE max_syllable vowels
+Need for special compounding rules in Hungarian.  First  parameter  is  the  maximum
+syllable number, that may be in a compound, if words in compounds are more than COM‐
+POUNDWORDMAX.  Second parameter is the list of vowels (for calculating syllables).
+
+##### SYLLABLENUM flags
+匈牙利语中需要的特定组合规则。Need for special compounding rules in Hungarian.
 
 ### 用于词缀创建的词缀文件选项
-       PFX flag cross_product number
+    PFX flag cross_product number
+    PFX flag stripping prefix [condition [morphological_fields...]]
+    SFX flag cross_product number
+    SFX flag stripping suffix [condition [morphological_fields...]]
 
-       PFX flag stripping prefix [condition [morphological_fields...]]
+词缀不管是前缀还是后缀都会通过连接到词根而形成另一个词。我们可以定义任意数
+量的词缀类。词缀类用词缀标志标记。词缀类定义的第一行是表头。词缀类表头字段
+如下：
 
-       SFX flag cross_product number
+    (0) 参数名 (PFX 或 SFX)
+    (1) Flag (词缀类的名字)
+    (2) Cross product (连接前后缀的权限)。可能值：Y（是）或 N（否）
+    (3) 接下来规则的行数。
 
-       SFX flag stripping suffix [condition [morphological_fields...]]
-              An affix is either a prefix or a suffix attached to root words to make other  words.
-              We  can  define  affix classes with arbitrary number affix rules.  Affix classes are
-              signed with affix flags. The first line of an affix class definition is the  header.
-              The fields of an affix class header:
+词缀规则字段：
 
-              (0) Option name (PFX or SFX)
-
-              (1) Flag (name of the affix class)
-
-              (2) Cross product (permission to combine prefixes and suffixes).  Possible values: Y
-              (yes) or N (no)
-
-              (3) Line count of the following rules.
-
-              Fields of an affix rules:
-
-              (0) Option name
-
-              (1) Flag
-
-              (2) stripping characters from beginning (at prefix rules) or end (at  suffix  rules)
-              of the word
-
-              (3) affix (optionally with flags of continuation classes, separated by a slash)
-
-              (4) condition.
-
-              Zero  stripping  or affix are indicated by zero. Zero condition is indicated by dot.
-              Condition is a simplified, regular expression-like pattern, which must be met before
-              the  affix  can  be applied. (Dot signs an arbitrary character. Characters in braces
-              sign an arbitrary character from the character subset. Dash hasn't got special mean‐
-              ing, but circumflex (^) next the first brace sets the complementer character set.)
-
-              (5) Optional morphological fields separated by spaces or tabulators.
+    (0) 参数名
+    (1) Flag
+    (2) 从单词的开始（对于前缀规则）或者结尾（对于后缀规则）删掉字符
+    (3) 词缀（可连续使用类 flag，用斜杠分开）
+    (4) 条件。零剥离或者词缀通过零来标记。零条件通过 `.` 标识。条件是简洁的
+        类正则表达式模式，在应用词缀变化之前必须通过筛选。（点表示任意数量的字
+        符，括号中的字符表示该子字符集中的任意字符。横线没有任何特殊意义，但是
+        抑扬音符（`^`）却表示挨着的括号字符集的反选。）
+    (5) 可选词性字段，由空格或者TAB分开。
 
 ### 词缀文件其他参数
-       CIRCUMFIX flag
-              Affixes signed with CIRCUMFIX flag may be on a word when this word also has a prefix
-              with CIRCUMFIX flag and vice versa (see circumfix.* test files in the source distri‐
-              bution).
+#### CIRCUMFIX flag
+Affixes signed with CIRCUMFIX flag may be on a word when this word also has a prefix
+with CIRCUMFIX flag and vice versa (see circumfix.* test files in the source distri‐
+bution).
 
-       FORBIDDENWORD flag
-              This  flag  signs  forbidden word form. Because affixed forms are also forbidden, we
-              can subtract a subset from set of the accepted affixed and  compound  words.   Note:
-              usefull to forbid erroneous words, generated by the compounding mechanism.
+#### FORBIDDENWORD flag
+This  flag  signs forbidden word form. Because affixed forms are also forbidden, we
+can subtract a subset from set of the accepted affixed and  compound  words.   Note:
+usefull to forbid erroneous words, generated by the compounding mechanism.
 
-       FULLSTRIP
-              With  FULLSTRIP, affix rules can strip full words, not only one less characters, be‐
-              fore adding the affixes, see fullstrip.* test files  in  the  source  distribution).
-              Note: conditions may be word length without FULLSTRIP, too.
+#### FULLSTRIP
+      With  FULLSTRIP, affix rules can strip full words, not only one less characters, be‐
+      fore adding the affixes, see fullstrip.* test files  in  the  source  distribution).
+      Note: conditions may be word length without FULLSTRIP, too.
 
-       KEEPCASE flag
-              Forbid  uppercased and capitalized forms of words signed with KEEPCASE flags. Useful
-              for special orthographies (measurements and currency often keep their case in upper‐
-              cased  texts) and writing systems (e.g. keeping lower case of IPA characters).  Also
-              valuable for words erroneously written in the wrong case.
+#### KEEPCASE flag
+      Forbid  uppercased and capitalized forms of words signed with KEEPCASE flags. Useful
+      for special orthographies (measurements and currency often keep their case in upper‐
+      cased  texts) and writing systems (e.g. keeping lower case of IPA characters).  Also
+      valuable for words erroneously written in the wrong case.
 
-              Note: With CHECKSHARPS declaration, words with sharp s and KEEPCASE flag may be cap‐
-              italized  and  uppercased, but uppercased forms of these words may not contain sharp
-              s, only SS. See germancompounding example in the tests  directory  of  the  Hunspell
-              distribution.
+      Note: With CHECKSHARPS declaration, words with sharp s and KEEPCASE flag may be cap‐
+      italized  and  uppercased, but uppercased forms of these words may not contain sharp
+      s, only SS. See germancompounding example in the tests  directory  of  the  Hunspell
+      distribution.
 
-       ICONV number_of_ICONV_definitions
+#### ICONV number_of_ICONV_definitions
 
-       ICONV pattern pattern2
-              Define input conversion table.  Note: useful to convert one type of quote to another
-              one, or change ligature.
+#### ICONV pattern pattern2
+      Define input conversion table.  Note: useful to convert one type of quote to another
+      one, or change ligature.
 
-       OCONV number_of_OCONV_definitions
+#### OCONV number_of_OCONV_definitions
 
-       OCONV pattern pattern2
-              Define output conversion table.
+#### OCONV pattern pattern2
+      Define output conversion table.
 
-       LEMMA_PRESENT flag
-              Deprecated. Use "st:" field instead of LEMMA_PRESENT.
+#### LEMMA_PRESENT flag
+      Deprecated. Use "st:" field instead of LEMMA_PRESENT.
 
-       NEEDAFFIX flag
-              This flag signs virtual stems in the dictionary, words only valid when affixed.  Ex‐
-              cept,  if  the  dictionary word has a homonym or a zero affix.  NEEDAFFIX works also
-              with prefixes and prefix + suffix combinations (see tests/needaffix5.*).
+#### NEEDAFFIX flag
+      This flag signs virtual stems in the dictionary, words only valid when affixed.  Ex‐
+      cept,  if  the  dictionary word has a homonym or a zero affix.  NEEDAFFIX works also
+      with prefixes and prefix + suffix combinations (see tests/needaffix5.*).
 
-       PSEUDOROOT flag
-              Deprecated. (Former name of the NEEDAFFIX option.)
+#### PSEUDOROOT flag
+      Deprecated. (Former name of the NEEDAFFIX option.)
 
-       SUBSTANDARD flag
-              SUBSTANDARD flag signs affix rules and dictionary words  (allomorphs)  not  used  in
-              morphological generation and root words removed from suggestion. See also NOSUGGEST.
+#### SUBSTANDARD flag
+      SUBSTANDARD flag signs affix rules and dictionary words  (allomorphs)  not  used  in
+      morphological generation and root words removed from suggestion. See also NOSUGGEST.
 
-       WORDCHARS characters
-              WORDCHARS  extends tokenizer of Hunspell command line interface with additional word
-              character. For example, dot, dash, n-dash, numbers, percent sign are word  character
-              in Hungarian.
+#### WORDCHARS characters
+      WORDCHARS  extends tokenizer of Hunspell command line interface with additional word
+      character. For example, dot, dash, n-dash, numbers, percent sign are word  character
+      in Hungarian.
 
-       CHECKSHARPS
-              SS letter pair in uppercased (German) words may be upper case sharp s (ß).  Hunspell
-              can handle this special casing with the CHECKSHARPS declaration (see  also  KEEPCASE
-              flag and tests/germancompounding example) in both spelling and suggestion.
+#### CHECKSHARPS
+      SS letter pair in uppercased (German) words may be upper case sharp s (ß).  Hunspell
+      can handle this special casing with the CHECKSHARPS declaration (see  also  KEEPCASE
+      flag and tests/germancompounding example) in both spelling and suggestion.
 
 ### 词法分析
        Hunspell's  dictionary items and affix rules may have optional space or tabulator separated
