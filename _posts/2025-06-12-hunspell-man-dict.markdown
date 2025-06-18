@@ -592,7 +592,7 @@ ASCII 箭头 "->" 在 ph: 模式中意味着一个 REP 规则（查阅 REP），
     *hepy -> happy
     *hepiest -> happiest
 
-st: Stem. Optional: default stem is the dictionary item in morphological analysis.  Stem
+st:词干（Stem）。选项：默认词干提取是字典条目用于词性分析的。词干提取字段
 field is useful for virtual stems (dictionary words with NEEDAFFIX flag) and morpho‐
 logical exceptions instead of new, single used morphological rules.
 
@@ -600,41 +600,39 @@ logical exceptions instead of new, single used morphological rules.
     mice  st:mouse is:plural
     teeth st:tooth is:plural
 
-Word forms with multiple stems need multiple dictionary items:
+有多个词干的词形需要多个词典条目：
 
     lay po:verb st:lie is:past_2
     lay po:verb is:present
     lay po:noun
 
-al:    Allomorph(s). A dictionary item is the stem of its allomorphs.  Morphological gener‐
-ation needs stem, allomorph and affix fields.
+al: 变体（Allomorph(s)）。一个词典条目是多个变体的词干。词性生成于词干、变体和词缀。
 
     sing al:sang al:sung
     sang st:sing
     sung st:sing
 
-po:    Part of speech category.
+po: 词类（Part of speech category）。
 
-ds:    Derivational suffix(es).  Stemming doesn't remove derivational suffixes.  Morpholog‐
-ical generation depends on the order of the suffix fields.
+ds: 派生后缀（Derivational suffix(es)）。词干提取不会删除派生后缀。词形生成依
+赖于后缀顺序。
 
-In affix rules:
+词缀规则中：
 
     SFX Y Y 1
     SFX Y 0 ly . ds:ly_adj
 
-In the dictionary:
+词典中：
 
     ably st:able ds:ly_adj
     able al:ably
 
-is:    Inflectional suffix(es).  All inflectional suffixes are removed by  stemming.   Mor‐
-phological generation depends on the order of the suffix fields.
+is: 屈折后缀（Inflectional suffix(es)）。所有屈折后缀在词干提取中都会被删除。
+词形生成依赖于词缀顺序。
 
     feet st:foot is:plural
 
-ts:    Terminal  suffix(es).   Terminal  suffix  fields are inflectional suffix fields "re‐
-moved" by additional (not terminal) suffixes.
+ts: 终结后缀（Terminal  suffix(es)）。终结后缀字段是屈折后缀字段通过附加后缀（非终结）“再次删除”掉。
 
 Useful for zero morphemes and affixes removed by splitting rules.
 
@@ -658,14 +656,12 @@ ip:    Planned: inflectional prefix.
 tp:    Planned: terminal prefix.
 
 ### 双重后缀移除
-Ispell's  original algorithm strips only one suffix. Hunspell can strip another one yet (or
-a plus prefix in COMPLEXPREFIXES mode).
+Ispell 的原始算法只移除一个后缀。Hunspell 还可以移除另一个（或者一个
+ COMPLEXPREFIXES 模式中的前缀）。
 
-The twofold suffix stripping is a significant improvement in handling of immense number  of
-suffixes, that characterize agglutinative languages.
+双重后最移除对于处理数量庞大的后缀黏着语言而言是一个意义重大的提升。
 
-A  second `s` suffix (affix class Y) will be the continuation class of the suffix `able` in
-the following example:
+下例中第二个后缀 `s` （词缀类 Y）会接在后缀类 `able` 之后：
 
     SFX Y Y 1
     SFX Y 0 s .
@@ -673,7 +669,7 @@ the following example:
     SFX X Y 1
     SFX X 0 able/Y .
 
-Dictionary file:
+词典文件：
 
     drink/X
 
@@ -692,43 +688,41 @@ Dictionary file:
     drinkables st:drink fl:X fl:Y
 ~~~
 
-Theoretically with the twofold suffix stripping needs only the square root of the number of
-suffix rules, compared with a Hunspell implementation. In our practice, we could have elab‐
-orated the Hungarian inflectional morphology with twofold suffix stripping.
+理论上，与 Hunspell 实现相比，双重词缀移除只需要后缀规则数的平方根，在我们的
+实践中，我们可以通过双重后缀移除简化匈牙利语的屈折语形态。
 
 ### 扩展词缀类
-       Hunspell can handle more than 65000 affix classes.  There are three new syntax  for  giving
-       flags in affix and dictionary files.
+Hunspell 可以处理超过 65000 种词缀类。在词典和词缀种有三种新语法给定 flag。
 
-       FLAG long command sets 2-character flags:
+FLAG long 命令设置 2-字符 flag：
 
                 FLAG long
                 SFX Y1 Y 1
                 SFX Y1 0 s 1
 
-       Dictionary record with the Y1, Z3, F? flags:
+词典记录中标记有 Y1, Z3, F? flags:
 
                 foo/Y1Z3F?
 
-       FLAG num command sets numerical flags separated by comma:
+FLAG num 命令设置逗号分割的数字 flag：
 
                 FLAG num
                 SFX 65000 Y 1
                 SFX 65000 0 s 1
 
-       Dictionary example:
+词典示例：
 
                 foo/65000,12,2756
 
-       The third one is the Unicode character flags.
+第三个是 Unicode 字符 flag。
 
-### 同形异义词
-       Hunspell's dictionary can contain repeating elements that are homonyms:
+### 多义词
+Hunspell 词典中用重复元素表示多义词：
 
                work/A    po:verb
                work/B    po:noun
 
-       An affix file:
+词缀文件：
 
                SFX A Y 1
                SFX A 0 s . sf:sg3
@@ -736,34 +730,34 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
                SFX B Y 1
                SFX B 0 s . is:plur
 
-       Test file:
+测试文件：
 
                works
 
-       Test:
+测试：
 
                $ hunspell -d test -m <testwords
                work st:work po:verb is:sg3
                work st:work po:noun is:plur
 
-       This feature also gives a way to forbid illegal prefix/suffix combinations.
+此功能也为禁用非法 prefix/suffix 组合提供了一种方式。
 
 ### 前缀后缀依赖
-       An  interesting  side-effect  of multi-step stripping is, that the appropriate treatment of
-       circumfixes now comes for free.  For instance, in Hungarian, superlatives are formed by si‐
-       multaneous  prefixation  of  leg-  and suffixation of -bb to the adjective base.  A problem
-       with the one-level architecture is that there is no way to render lexical licensing of par‐
-       ticular  prefixes and suffixes interdependent, and therefore incorrect forms are recognized
-       as valid, i.e. *legvén = leg + vén `old'. Until the introduction  of  clusters,  a  special
-       treatment  of  the  superlative  had to be hardwired in the earlier HunSpell code. This may
-       have been legitimate for a single case, but in fact prefix--suffix dependences are  ubiqui‐
-       tous in category-changing derivational patterns (cf. English payable, non-payable but *non-
-       pay or drinkable, undrinkable but *undrink). In simple words, here, the prefix un-  is  le‐
-       gitimate  only  if the base drink is suffixed with -able. If both these patters are handled
-       by on-line affix rules and affix rules are checked against the base only, there is  no  way
-       to express this dependency and the system will necessarily over- or undergenerate.
+An  interesting  side-effect  of multi-step stripping is, that the appropriate treatment of
+circumfixes now comes for free.  For instance, in Hungarian, superlatives are formed by si‐
+multaneous  prefixation  of  leg-  and suffixation of -bb to the adjective base.  A problem
+with the one-level architecture is that there is no way to render lexical licensing of par‐
+ticular  prefixes and suffixes interdependent, and therefore incorrect forms are recognized
+as valid, i.e. *legvén = leg + vén `old'. Until the introduction  of  clusters,  a  special
+treatment  of  the  superlative  had to be hardwired in the earlier HunSpell code. This may
+have been legitimate for a single case, but in fact prefix--suffix dependences are  ubiqui‐
+tous in category-changing derivational patterns (cf. English payable, non-payable but *non-
+pay or drinkable, undrinkable but *undrink). In simple words, here, the prefix un-  is  le‐
+gitimate  only  if the base drink is suffixed with -able. If both these patters are handled
+by on-line affix rules and affix rules are checked against the base only, there is  no  way
+to express this dependency and the system will necessarily over- or undergenerate.
 
-       In next example, suffix class R have got a prefix `continuation' class (class P).
+In next example, suffix class R have got a prefix `continuation' class (class P).
 
               PFX P Y 1
               PFX P   0 un . [prefix_un]+
@@ -777,13 +771,13 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               SFX R Y 1
               SFX R   0 able/PS . +DER_V_ADJ_ABLE
 
-       Dictionary:
+Dictionary:
 
               2
               drink/RQ  [verb]
               drink/S   [noun]
 
-       Morphological analysis:
+Morphological analysis:
 
               > drink
               drink[verb]
@@ -805,9 +799,9 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               Unknown word.
 
 ### 双向词缀
-       Conditional affixes implemented by a continuation class are not enough for circumfixes, be‐
-       cause a circumfix is one affix in morphology. We also need  CIRCUMFIX  option  for  correct
-       morphological analysis.
+Conditional affixes implemented by a continuation class are not enough for circumfixes, be‐
+cause a circumfix is one affix in morphology. We also need  CIRCUMFIX  option  for  correct
+morphological analysis.
 
               # circumfixes: ~ obligate prefix/suffix combinations
               # superlative in Hungarian: leg- (prefix) AND -bb (suffix)
@@ -827,12 +821,12 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               SFX C 0 obb/AX . +SUPERLATIVE
               SFX C 0 obb/BX . +SUPERSUPERLATIVE
 
-       Dictionary:
+Dictionary:
 
               1
               nagy/C    [MN]
 
-       Analysis:
+Analysis:
 
               > nagy
               nagy[MN]
@@ -844,9 +838,9 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               nagy[MN]+SUPERSUPERLATIVE
 
 ### 组合
-       Allowing free compounding yields decrease in precision of recognition, not to mention stem‐
-       ming and morphological analysis.  Although lexical switches are introduced to license  com‐
-       pounding of bases by Ispell, this proves not to be restrictive enough. For example:
+Allowing free compounding yields decrease in precision of recognition, not to mention stem‐
+ming and morphological analysis.  Although lexical switches are introduced to license  com‐
+pounding of bases by Ispell, this proves not to be restrictive enough. For example:
 
               # affix file
               COMPOUNDFLAG X
@@ -855,26 +849,26 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               foo/X
               bar/X
 
-       With this resource, foobar and barfoo also are accepted words.
+With this resource, foobar and barfoo also are accepted words.
 
-       This has been improved upon with the introduction of direction-sensitive compounding, i.e.,
-       lexical features can specify separately whether a base can occur as leftmost  or  rightmost
-       constituent  in  compounds.   This,  however, is still insufficient to handle the intricate
-       patterns of compounding, not to mention idiosyncratic (and language specific) norms of  hy‐
-       phenation.
+This has been improved upon with the introduction of direction-sensitive compounding, i.e.,
+lexical features can specify separately whether a base can occur as leftmost  or  rightmost
+constituent  in  compounds.   This,  however, is still insufficient to handle the intricate
+patterns of compounding, not to mention idiosyncratic (and language specific) norms of  hy‐
+phenation.
 
-       The  Hunspell  algorithm  currently  allows  any affixed form of words, which are lexically
-       marked as potential members of compounds. Hunspell improved this, and  its  recursive  com‐
-       pound  checking  rules makes it possible to implement the intricate spelling conventions of
-       Hungarian compounds. For example, using  COMPOUNDWORDMAX,  COMPOUNDSYLLABLE,  COMPOUNDROOT,
-       SYLLABLENUM  options  can  be  set the noteworthy Hungarian `6-3' rule.  Further example in
-       Hungarian, derivate suffixes often modify compounding properties. Hunspell allows the  com‐
-       pounding  flags  on  the  affixes,  and there are two special flags (COMPOUNDPERMITFLAG and
-       (COMPOUNDFORBIDFLAG) to permit or prohibit compounding of the derivations.
+The  Hunspell  algorithm  currently  allows  any affixed form of words, which are lexically
+marked as potential members of compounds. Hunspell improved this, and  its  recursive  com‐
+pound  checking  rules makes it possible to implement the intricate spelling conventions of
+Hungarian compounds. For example, using  COMPOUNDWORDMAX,  COMPOUNDSYLLABLE,  COMPOUNDROOT,
+SYLLABLENUM  options  can  be  set the noteworthy Hungarian `6-3' rule.  Further example in
+Hungarian, derivate suffixes often modify compounding properties. Hunspell allows the  com‐
+pounding  flags  on  the  affixes,  and there are two special flags (COMPOUNDPERMITFLAG and
+(COMPOUNDFORBIDFLAG) to permit or prohibit compounding of the derivations.
 
-       Suffixes with this flag forbid compounding of the affixed word.
+Suffixes with this flag forbid compounding of the affixed word.
 
-       We also need several Hunspell features for handling German compounding:
+We also need several Hunspell features for handling German compounding:
 
               # German compounding
 
@@ -945,7 +939,7 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               PFX D Y y/PX Y
               PFX D Z z/PX Z
 
-       Example dictionary:
+Example dictionary:
 
               4
               Arbeit/A-
@@ -953,7 +947,7 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               -/W
               Arbeitsnehmer/Z
 
-       Accepted compound compound words with the previous resource:
+Accepted compound compound words with the previous resource:
 
               Computer
               Computern
@@ -969,7 +963,7 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               Computerarbeits-Computer
               Computerarbeits-Computern
 
-       Not accepted compoundings:
+Not accepted compoundings:
 
               computer
               arbeit
@@ -986,41 +980,36 @@ orated the Hungarian inflectional morphology with twofold suffix stripping.
               Computerarbeits-computer
         Circumfix      Arbeitsnehmer
 
-       This solution is still not ideal, however, and will be replaced  by  a  pattern-based  com‐
-       pound-checking  algorithm  which is closely integrated with input buffer tokenization. Pat‐
-       terns describing compounds come as a separate input resource that can refer  to  high-level
-       properties of constituent parts (e.g. the number of syllables, affix flags, and containment
-       of hyphens). The patterns are matched against potential segmentations of compounds  to  as‐
-       sess wellformedness.
+This solution is still not ideal, however, and will be replaced  by  a  pattern-based  com‐
+pound-checking  algorithm  which is closely integrated with input buffer tokenization. Pat‐
+terns describing compounds come as a separate input resource that can refer  to  high-level
+properties of constituent parts (e.g. the number of syllables, affix flags, and containment
+of hyphens). The patterns are matched against potential segmentations of compounds  to  as‐
+sess wellformedness.
 
 ### Unicode 字符编码
-       Both  Ispell  and  Myspell  use 8-bit ASCII character encoding, which is a major deficiency
-       when it comes to scalability.  Although a language like  Hungarian  has  a  standard  ASCII
-       character  set  (ISO  8859-2),  it fails to allow a full implementation of Hungarian ortho‐
-       graphic conventions.  For instance, the '--' symbol (n-dash) is missing from this character
-       set  contrary  to  the  fact that it is not only the official symbol to delimit parenthetic
-       clauses in the language, but it can be in compound words as a special 'big' hyphen.
+Ispell 和 Myspell 都使用 8-bit ASCII 字符编码，这在需要扩展时就成了最大的不足
+之处。尽管一种语言例如匈牙利语有标准的 ASCII 字符集（ISO  8859-2），也不能完
+全基于匈牙利语的正字法实现全部的规则。例如，这个字符集中丢失了 '--' 符号
+（n-dash）从而忽略了这是分割括号子句的官方符号，而且做为特殊的“大”横线连接
+合成词的作用。
 
-       MySpell has got some 8-bit encoding tables, but there are languages without standard  8-bit
-       encoding,  too.  For  example,  a lot of African languages have non-latin or extended latin
-       characters.
+MySpell 有 8-bit 编码表，但是有些语言没有标准的 8-bit 编码，例如一些非洲语言
+是非拉丁或者拉丁扩展字符。
 
-       Similarly, using the original spelling of certain foreign names like Ångström or Molière is
-       encouraged  by  the Hungarian spelling norm, and, since characters 'Å' and 'è' are not part
-       of ISO 8859-2, when they combine with inflections containing characters only in  ISO 8859-2
-       (like  elative  -ből,  allative  -től  or delative -ről with double acute), these result in
-       words (like Ångströmről or Molière-től.) that can not be encoded using any single ASCII en‐
-       coding scheme.
+Similarly, using the original spelling of certain foreign names like Ångström or Molière is
+encouraged  by  the Hungarian spelling norm, and, since characters 'Å' and 'è' are not part
+of ISO 8859-2, when they combine with inflections containing characters only in  ISO 8859-2
+(like  elative  -ből,  allative  -től  or delative -ről with double acute), these result in
+words (like Ångströmről or Molière-től.) that can not be encoded using any single ASCII en‐
+coding scheme.
 
-       The problems raised in relation to 8-bit ASCII encoding have long been recognized by propo‐
-       nents of Unicode. It is clear that trading efficiency for encoding-independence has its ad‐
-       vantages when it comes a truly multi-lingual application. There is implemented a memory and
-       time efficient Unicode handling in Hunspell.  In  non-UTF-8  character  encodings  Hunspell
-       works  with  the original 8-bit strings. In UTF-8 encoding, affixes and words are stored in
-       UTF-8, during the analysis are handled in mostly UTF-8, under condition checking  and  sug‐
-       gestion  are  converted  to UTF-16. Unicode text analysis and spell checking have a minimal
-       (0-20%) time overhead and minimal or reasonable memory overhead depends from  the  language
-       (its UTF-8 encoding and affixation).
+有关 8-bit ASCII 编码的问题被 Unicode 的提案认识到。很明显，当涉及到真正的多
+语言应用程序时，编码独立当然要比效率有优势。Hunspel 实现了 Unicode 处理和内
+存的高效管理。对于非 UTF-8 字符编码 Hunspell 用原始的 8-bit 字符串处理。对于
+ UTF-8 编码，词缀和词都以 UTF-8 编码，分析和处理多数 UTF-8 编码时，以及条件
+检查和推荐选词会转为 UTF-16 编码。Unicode 文本分析和拼写检查有一个最少（0-20%）
+时间消耗和最少或者合理的内存消耗依赖来自语言（语言的 UTF-8 编码和词缀）。
 
 ### Aspell 字典转换
 Aspell 字典很容易转换到 hunspell。转换步骤：
