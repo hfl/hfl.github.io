@@ -36,55 +36,44 @@ Z，再回车（Enter）或者 Ctrl + C 关闭）。
 containing  the word and the previous line are printed at the bottom of
 the screen.  If your terminal can display in reverse  video,  the  word
 itself  is highlighted.  You have the option of replacing the word com‐
-pletely, or choosing one of the suggested words.命令中单字符参数如下（case is ignored）：
+pletely, or choosing one of the suggested words.命令中单字符参数如下（忽略示例）：
 
-    R      Replace the misspelled word completely.
+    R      完全取代误拼词。
 
-    Space  Accept the word this time only.
+    Space  本次接受该词。
 
-    A      Accept the word for the rest of this hunspell session.
+    A      本次 Hunspell 会话中都接受该词。
 
-    I      Accept  the  word,  capitalized as it is in the file, and
-           update private dictionary.
+    I      接受该词，并在文件中大写，更新定制词典。
 
-    U      Accept the word, and add an uncapitalized (actually,  all
-           lower-case) version to the private dictionary.
+    U      接受该词，在定制词典中添加一个非大写版本词（实际上都小写）。
 
-    S      Ask a stem and a model word and store them in the private
-           dictionary.  The stem will be accepted also with the  af‐
-           fixes of the model word.
+    S      询问一个词干和一个模型词，且将他们存入定制词典。词干与词缀模型的
+           组合将会接受。
 
-    0-n    Replace with one of the suggested words.
+    0-n    用一个建议词替换。
 
-    X      Write  the  rest of this file, ignoring misspellings, and
-           start next file.
+    X      写入文件剩余部分，忽略误拼，开始检查下一个文件。
 
-    Q      Exit immediately and leave the file unchanged.
+    Q      立即退出，保持文件未更改状态。
 
-    ^Z     Suspend hunspell.
+    ^Z     暂停 Hunspell。
 
-    ?      Give help screen.
+    ?      给出帮助屏幕。
 
 ## 选项
-    -1     Check only first field in lines (delimiter = tabulator).
+    -1    只检测每行的第一个字段（分割符 = TAB 空格）。
 
-    -a     The -a option is intended to be used from other programs through
-          a  pipe.  In this mode, hunspell prints a one-line version iden‐
-          tification message, and then begins reading lines of input.  For
-          each input line, a single line is written to the standard output
-          for each word checked for spelling on the line.  If the word was
-          found  in the main dictionary, or your personal dictionary, then
-          the line contains only a '*'.  If the word was found through af‐
-          fix removal, then the line contains a '+', a space, and the root
-          word.  If the word was found through  compound  formation  (con‐
-          catenation of two words, then the line contains only a '-'.
-
-          If the word is not in the dictionary, but there are near misses,
-          then the line contains an '&', a space, the misspelled  word,  a
-          space,  the  number of near misses, the number of characters be‐
-          tween the beginning of the line and the beginning  of  the  mis‐
-          spelled  word,  a  colon,  another space, and a list of the near
-          misses separated by commas and spaces.
+    -a    这个 -a 选项试图通过管道使用其他程序。在此模式下，Hunspell 打
+          印一行版鉴定信息，然后开始读取输入行。对于每行输入，都做为单
+          独行写入标准输出行，其中的每个单词都会进行拼写检查。如果单词
+          在主词典或者定制词典里，那么该行将只有一个 '*'。如果发现单词
+          通过修复可以出现在词典，那么该行包含一个 '+'，一个空格和词根。
+          如果该词通过组合格式（连接两个词）可以出现在词典，那么行里会
+          包含一个 '-'。如果单词不在词典，但是可以通过邻键错误，那么行
+          内就包含一个 '&'，一个空格，误拼词，一个空格，误拼数量，行开
+          始和误拼词之间的字符数，一个冒号，又一个空格和一列由逗号和空
+          格隔开的邻键词。
 
           Also, each near miss or guess is capitalized the same as the in‐
           put  word  unless  such capitalization is illegal; in the latter
@@ -199,118 +188,104 @@ pletely, or choosing one of the suggested words.命令中单字符参数如下�
           hunspell(5)).
 
     --check-url
-          Check URLs, e-mail addresses and directory paths.
+          检查 URL，电子邮箱地址和词典路径。
 
-    -D     Show  detected  path  of  the loaded dictionary, and list of the
-          search path and the available dictionaries.
+    -D     显示探测到的已经加载的词典和检索途径以及可提供的词典。
 
     -d dict,dict2,...
-          Set dictionaries by their base names with or without paths.  Ex‐
-          ample of the syntax:
+          通过文件名（可能有路径）设置词典。语法示例：
 
     -d en_US,en_geo,en_med,de_DE,de_med
 
-    en_US and de_DE are base dictionaries, they consist of aff and dic file
-    pairs: en_US.aff, en_US.dic and de_DE.aff, de_DE.dic.  En_geo,  en_med,
-    de_med  are special dictionaries: dictionaries without affix file. Spe‐
-    cial dictionaries are optional extension of the base dictionaries  usu‐
-    ally  with  special (medical, law etc.)  terms. There is no naming con‐
-    vention for special dictionaries, only the ".dic" extension: dictionar‐
-    ies  without affix file will be an extension of the preceding base dic‐
+    en_US 和 de_DE 是词典名，它们由 `aff` 和 `dic` 文件组成。
+    套件：en_US.aff，en_US.dic 和 de_DE.aff，de_DE.dic。En_geo，en_med，
+    de_med 是特殊词典：不带词缀文件的词典。特殊词典是基础词典的扩展，通常
+    都是特殊术语（医学、法学等）词典。特殊词典没有命名约定，只有“.dic”
+    扩展：没有词缀文件的词典will be an extension of the preceding base dic‐
     tionary (right order of the parameter list needs for good suggestions).
     First item of -d parameter list must be a base dictionary.
 
-    -G     Print only correct words or lines.
+    -G     只打印正确的词或者行。
 
-    -H     The input file is in SGML/HTML format.
+    -H     输入文件为 SGML/HTML 格式。
 
     -h, --help
-          Short help.
+          简短帮助。
 
-    -i enc Set input encoding.
+    -i enc 设置输入编码。
 
-    -L     Print lines with misspelled words.
+    -L     打印误拼词行。
 
-    -l     The  "list" option is used to produce a list of misspelled words
-          from the standard input.
+    -l     "list" 选项用于生成一列基于标准输入的误拼词。
 
-    -m     Analyze the words of the input text (see also hunspell(5)  about
-          morphological  analysis). Without dictionary morphological data,
-          signs the flags of the affixes of the word forms for  dictionary
-          developers.
+    -m     分析标准输入文本的词（参阅 hunspell(5) 关于形态学分析）。没有
+            词典的形态学数据，面向词典开发的词形的词缀等。
 
-    -n     The input file is in nroff/troff format.
+    -n     输入文件为 nroff/troff 格式。
 
-    -O     The  input file is in OpenDocument (ODF or Flat ODF) format.  If
-          unzip program is not installed, install it before using this op‐
-          tion.
+    -O     输入文件为 OpenDocument (ODF or Flat ODF) 格式。如果没有安装
+          unzip 程序，则在使用此选项前安装。
 
     -P password
-          Set password for encrypted dictionaries.
+          为加密词典设置密码。
 
     -p dict
-          Set path of personal dictionary.  The default dictionary depends
-          on the locale settings. The following environment variables  are
-          searched:  LC_ALL,  LC_MESSAGES,  and LANG. If none are set then
-          the default personal dictionary is $HOME/.hunspell_default.
+          设置定制词典路径。默认词典依赖于本地设置。搜索下面环境变量：
+           LC_ALL、LC_MESSAGES 和 LANG。如果未设置这些环境变量则默认定
+           制词典在 $HOME/.hunspell_default。
 
-          Setting -d or  the DICTIONARY environmental  variable,  personal
-          dictionary will be $HOME/.hunspell_dicname
+          设置 -d 或者 DICTIONARY 环境变量，定制词典将位于
+          $HOME/.hunspell_dicname
 
-    -r     Warn  of  the rare words, which are also potential spelling mis‐
-          takes.
+    -r    罕见词警告，可能预示着潜在的拼写错误。
 
-    -s     Stem the words of the input text  (see  also  hunspell(5)  about
-          stemming). It depends from the dictionary data.
+    -s    提取输入文本（参阅 hunspell(5) 有关词干提取）的词干。它依赖于
+          词典数据。
 
-    -t     The input file is in TeX or LaTeX format.
+    -t     输入文件为 TeX 或者 LaTeX 格式。
 
     -v, --version
-          Print version number.
+          打印版本号。
 
-    -vv    Print ispell(1) compatible version number.
+    -vv    打印 ispell(1) 兼容版本号。
 
-    -w     Print misspelled words (= lines) from one word/line input.
+    -w     从一 词/行 输入开始打印误拼词 (= lines)。 
 
-    -X     The input file is in XML format.
+    -X     输入文件为 XML 格式。
 
 ## 示例
     hunspell example.html
-          Interactive spell checking of an HTML file with the default dic‐
-          tionary.
+          用默认词典对 HTML 文件进行互动式拼写检查。
 
     hunspell -d en_US example.html
-          Interactive spell checking of an HTML file with the  en_US  dic‐
-          tionary.
+          用 en_US 词典对 HTML 文件进行互动式拼写检查。
 
     hunspell -d en_US,en_US_med medical.txt
-          Interactive spell checking with multiple dictionaries.
+          用多个词典进行互动式拼写检查。
 
     hunspell *.odt
-          Interactive spell checking of ODF documents.
+          对 ODF 文档进行互动式拼写检查。
 
     hunspell -l *.odt
-          List bad words of ODF documents
+          列出 ODF 文档的错词。
 
     hunspell -l *.odt | sort | uniq >unrecognized
-          Saving  unrecognized  words of ODF documents (filtering duplica‐
-          tions).
+          保存 ODF 文档(filtering duplications)的未识别词。
 
     hunspell -p unrecognized_but_good *.odt
-          Interactive spell checking of ODF documents,  using  the  previ‐
-          ously  saved and reduced word list, as a personal dictionary, to
-          speed up spell checking.
+          互动式检查 ODF 文档，用前一种保存和和减少词列表做为定制词典，
+          来加速拼写检查。
 
     ENVIRONMENT
 
     DICTIONARY
-          Similar to -d.
+          同 -d。
 
     DICPATH
-          Dictionary path.
+          词典路径。
 
     WORDLIST
-          Equivalent to -p.
+          等效于 -p。
 
 ## 文件
 默认词典依赖本地设置。软件会先搜索下面的环境变量：LC_ALL、LC_MESSAGES 和 LANG。
