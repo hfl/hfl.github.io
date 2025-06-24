@@ -27,16 +27,15 @@ Hunspell 1.2.3
 & exsample 4 0: example, examples, ex sample, ex-sample
 ~~~
 
-纠正词带有 `*`、`+` 或 `-`，未识别词带有 `#` 或者再输出行带有 `&`（见后面）。
+纠正词带有 `*`、`+` 或 `-`，未识别词带有 `#` 或者在输出行带有 `&`（见后面）。
 （在 Unix/Linux 上通过 <kbd>Ctrl + d</kbd> 关闭，在 Windows 上通过 Ctrl + 
 Z，再回车（Enter）或者 Ctrl + C 关闭）。
 
 如果有文件名参数，Hunspell 会在屏幕顶端显示每一个词典里没有的词，而且允许你
-修改。如果词典里有“邻词错误”，那么也会显示下列行。Finally,  the  line
-containing  the word and the previous line are printed at the bottom of
-the screen.  If your terminal can display in reverse  video,  the  word
-itself  is highlighted.  You have the option of replacing the word com‐
-pletely, or choosing one of the suggested words.命令中单字符参数如下（忽略示例）：
+修改。如果词典里有“邻词错误”，那么也会显示备选词列表。最终，包含有误拼词
+的行和误拼词都打印在屏幕顶部。如果你的屏幕支持反向显示视频，则单词可高亮。
+你可以选择替换单词或者从建议单词中选择对应单词。命令中单字符参数如下（忽略
+示例）：
 
     R      完全取代误拼词。
 
