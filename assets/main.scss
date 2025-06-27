@@ -8,9 +8,13 @@ body {
 .post-content > p {
   text-indent: 2em;
 }
+.mglusg {
+  font-family: "Mongolian Baiti", "Noto Sans Mongolian";
+}
+
 .mgl, td strong {
   writing-mode: vertical-lr;
-  font-family: "Noto Sans Mongolian"
+  font-family: "Mongolian Baiti", "Noto Sans Mongolian";
 }
 a[href^="http"] {
   background: url("../assets/images/external-link.svg") no-repeat 100% 0;
