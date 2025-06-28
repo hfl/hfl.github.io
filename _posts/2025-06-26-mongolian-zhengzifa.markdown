@@ -5,7 +5,8 @@ categories: mongolian
 date: 2025-06-26 7:30:34 +0800
 ---
 蒙古文词是以空格做为单词分割符，一个单词可能包含有多个字母。所以蒙古文不能
-以字做为计算蒙古文的数量单位，应该说词，或者单词，或者字母，音节等。另外，
+以“字”做为计算蒙古文的数量单位，应该说“词”，或者单词。如果再细分可以分
+成音节，然后是字母。所以字是一个汉语的词汇，不能用来衡量蒙古文的篇幅。另外，
 蒙古语和蒙古文不能完全等同，蒙古语是语言，蒙古文是蒙古语的书面形式，蒙古语
 在长期的发展中可能已经同蒙古文不完全一致了，但是蒙古文会相对稳定，即使历经
 多年，书写的可能还是 800 年前的形式。
@@ -45,7 +46,7 @@ date: 2025-06-26 7:30:34 +0800
 
 ### 三 辅音和谐规则
 
-1. 硬辅音（ᠪ ᠭ ᠷ ᠰ ᠳ）结尾的词后面接以硬辅音（ᠲ ᠴ）为首的附加成分，软辅音（ᠨ ᠮ ᠯ ᠩ）结
+1. 硬辅音（<span class="mglusg">ᠪ ᠭ ᠷ ᠰ ᠳ</span>）结尾的词后面接以硬辅音（ᠲ ᠴ）为首的附加成分，软辅音（ᠨ ᠮ ᠯ ᠩ）结
 尾的词后面接以软辅音（ᠳ ᠵ）为首的附加成分。
 2. 带有 ᠷ 的词接带有 ᠷ 的附加成分时，附加成分的 ᠷ 往往变为 ᠯ。
 3. 在以 ᠨ 结尾的词后，接以 ᠭ ᠬ ᠨ 为首的附加成分时，ᠨ 往往变为 ᠩ。
@@ -70,26 +71,27 @@ date: 2025-06-26 7:30:34 +0800
     * 可以连接元音，也可以不连。需要连接的一小部分，牢记即可(<span class="mglusg"> ‍ᠮᠠᠷ᠂ ‍ᠮᠠᠭᠴᠠ᠂ ‍ᠮᠠᠨᠵᠢᠨ᠂ ‍ᠮᠦᠢ᠂ ‍ᠮᠠᠯ᠂ ‍ᠮᠠᠢᠴᠢ᠂ ‍ᠮᠠᠮ᠂ ‍ᠰᠢ᠂ ‍ᠶᠦ᠂ ‍ᠯᠦᠭ᠎ᠠ᠂ ‍‍ᠷᠦᠨ</span>)；大部分不需要连接。
     * 连接元音例外现象：
         1. 连接元音的一般形式是圆唇元音(‍<span class="mglusg"> ᠣ‍ ‍ᠤ‍ ‍ᠥ‍ ‍ᠦ‍ </span>)，但在某些词上接<span class="mglusg"> ‍ᠷᠬᠡ‍᠂ ‍ᠩ </span> 等附加成分时，有时用<span class="mglusg"> ‍ᠠ‍ </span>（a，e）的形式，此外还有个别的写法。
-        2. <span class="mglusg">ᠪᠠ᠂ ᠪᠠᠯ᠂ ᠪᠠᠴᠤ᠂ ᠪᠠᠰᠤ</span>等附加成分在一般情况下是不需要连接
-        元音的，但是如果前边的辅音同样是<span class="mglusg">ᠪ</span>时，则需要连接元音。
-        3. 在<span class="mglusg">ᠥᠭ</span>这个词上也有类似上里的例外情况。
-            - 在<span class="mglusg">ᠥᠭ</span>后边按一般正字规则写<span class="mglusg">‍ᠥ‍</span>的地方变通为写<span class="mglusg">‍ᠭᠥ</span>
-            - <span class="mglusg">ᠬᠥᠯ᠎ᠡ᠂ ᠬᠦᠯᠡᠷ᠂ ᠬᠡᠷ</span>在一般情况下本垒是不同连接元音的，但接在<span class="mglusg">ᠥᠭ</span>下边时，也家一个<span class="mglusg">‍ᠭᠥ</span>。
-        4. 使动态的<span class="mglusg">‍ᠭ᠎ᠠ᠂ ᠭᠡ</span>（不同于长元音结构的<span class="mglusg">ᠭᠠ᠂ ᠭᠡ</span>）中的<span class="mglusg">‍ᠭ</span>是以词为形式出现的，按上述一般规则需要连接元音，但实际上不写连接元音。
-        5. <span class="mglusg">ᠭᠠᠷ + ‍ᠵᠠ</span>按一般规律可以不写连接元音，但是习惯上写<span class="mglusg">ᠭᠠᠷᠦᠵᠠ</span>。<span class="mglusg">ᠰᠦᠷ + ᠺᠡᠢ</span>按一般规律可以不写连接元音，但习惯上写<span class="mglusg">ᠰᠦᠷᠡᠺᠡᠢ</span>。
+        2. <span class="mglusg">ᠪᠠ᠂ ᠪᠠᠯ᠂ ᠪᠠᠴᠤ᠂ ᠪᠠᠰᠤ</span> 等附加成分在一般情况下是不需要连接
+        元音的，但是如果前边的辅音同样是 <span class="mglusg">ᠪ</span> 时，则需要连接元音。
+        3. 在 <span class="mglusg">ᠥᠭ</span> 这个词上也有类似上里的例外情况。
+            - 在 <span class="mglusg">ᠥᠭ</span> 后边按一般正字规则写 <span class="mglusg">‍ᠥ‍</span> 的地方变通为写 <span class="mglusg">‍ᠭᠥ</span>。
+            - <span class="mglusg">ᠬᠥᠯ᠎ᠡ᠂ ᠬᠦᠯᠡᠷ᠂ ᠬᠡᠷ</span> 在一般情况下本垒是不同连接元音的，但接在<span class="mglusg">ᠥᠭ</span> 下边时，也家一个 <span class="mglusg">‍ᠭᠥ</span>。
+        4. 使动态的 <span class="mglusg">‍ᠭ᠎ᠠ᠂ ᠭᠡ</span>（不同于长元音结构的<span class="mglusg">ᠭᠠ᠂ ᠭᠡ</span>）中的 <span class="mglusg">‍ᠭ</span> 是以词为形式出现的，按上述一般规则需要连接元音，但实际上不写连接元音。
+        5. <span class="mglusg">ᠭᠠᠷ + ‍ᠵᠠ</span> 按一般规律可以不写连接元音，但是习惯上写 <span class="mglusg">ᠭᠠᠷᠦᠵᠠ</span>。<span class="mglusg">ᠰᠦᠷ + ᠺᠡᠢ</span> 按一般规律可以不写连接元音，但习惯上写 <span class="mglusg">ᠰᠦᠷᠡᠺᠡᠢ</span>。
 
-## 元音辅音相接规则
+### 二 元音辅音相接规则
 
 蒙古文拼写中，有些“格”和个别“领属”附加成分都有两种写法：一种以元音开始，
 一种以辅音开始。这就是为了在拼写时，在以元音结尾的词干上接以辅音开始的附加
 成分；在以辅音结尾的词干上，接以元音开始的附加成分。
 
-## 语音脱落
+### 三 语音脱落
 
 蒙古文拼写中，有些词干接附加成分时，有些词干末尾的语音要脱落。
 
-1. 在一些动词后接形容词构词附加成分<span class="mglusg">‍ᠬᠠᠢ ‍ᠬᠡᠢ</span>时，词干末的<span class="mglusg">‍ᠠ‍</span>一般要脱落。
-2. 以<span class="mglusg">ᠨ</span>结尾的词后接某些附加成分时，<span class="mglusg">ᠨ</span>脱落，在个别词上甚至带<span class="mglusg">ᠨ</span>的整个音节脱落。
-3. 以<span class="mglusg">‍ᠷ ‍ᠯ</span>及其他一些辅音结尾的词后，接某些附加成分时，也发生语音脱落现象。
-4. 个别以<span class="mglusg">‍ᠢ</span>结尾的复合元音有脱落现象。两个音节以上的词干末尾的长元音<span class="mglusg">‍ᠦᠦ ‍ᠤᠤ</span>在接附加成分时往往变为<span class="mglusg">‍ᠦ‍</span>的形式（有些则不变）。
-<span class="mglusg"></span>
+1. 在一些动词后接形容词构词附加成分 <span class="mglusg">‍ᠬᠠᠢ ‍ᠬᠡᠢ</span> 时，词干末的 <span class="mglusg">‍ᠠ‍</span> 一般要脱落。
+2. 以 <span class="mglusg">ᠨ</span> 结尾的词后接某些附加成分时，<span class="mglusg">ᠨ</span> 脱落，在个别词上甚至带 <span class="mglusg">ᠨ</span> 的整个音节脱落。
+3. 以 <span class="mglusg">‍ᠷ ‍ᠯ</span> 及其他一些辅音结尾的词后，接某些附加成分时，也发生语音脱落现象。
+4. 个别以 <span class="mglusg">‍ᠢ</span> 结尾的复合元音有脱落现象。两个音节以上的词干末尾的长元音 <span class="mglusg">‍ᠦᠦ ‍ᠤᠤ</span> 在接附加成分时往往变为 <span class="mglusg">‍ᠦ‍</span> 的形式（有些则不变）。
+
+蒙古文正字法规则大致是以上内容。
