@@ -1,9 +1,10 @@
 ---
+layout: page
+title: 基于 Hunspell 的蒙古文拼写检查系统
 permalink: /articles/mongolian-spellchecker-based-hunspell/
 ---
 
 # 基于 Hunspell 的蒙古文拼写检查系统
-{: .post-title .p-name}
 
 ## 蒙古语文特点
 
