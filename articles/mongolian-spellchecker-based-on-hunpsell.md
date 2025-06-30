@@ -1,6 +1,5 @@
 ---
-layout: page
-permalink: /articles/hunspell-spellchecker-for-mongolian/
+permalink: /articles/mongolian-spellchecker-based-hunspell/
 ---
 
 # 基于 Hunspell 的蒙古文拼写检查系统
