@@ -15,10 +15,10 @@ hunspell - 拼写检查，词干提取和词形分析软件
 
 ## 简介
 
-Hunspell 是继 Ispell 程序之后最流行的软件。最常见的用法是`hunspell`
+Hunspell 是继 Ispell 程序之后流行的拼写检查软件。最常见的用法是`hunspell`
 或者`hunspell 文件名`。没有文件名参数时，hunspell 会检测标准输入。
 分两行输入“cat”和“exsample”，结果会输出一个星号（意思是“cat”是
-一个正确的词）和带有纠正词的一行：
+一个正确词）和带有纠正词的一行：
 
 ~~~shell
 $ hunspell -d en_US
@@ -27,8 +27,8 @@ Hunspell 1.2.3
 & exsample 4 0: example, examples, ex sample, ex-sample
 ~~~
 
-纠正词带有 `*`、`+` 或 `-`，未识别词带有 `#` 或者在输出行带有 `&`（见后面）。
-（在 Unix/Linux 上通过 <kbd>Ctrl + d</kbd> 关闭，在 Windows 上通过 Ctrl + 
+正确词前标有 `*`、`+` 或者 `-`；未识别词带有 `#` 或者 `&`（见后面）。
+（交互模式在 Unix/Linux 上通过 <kbd>Ctrl + d</kbd> 关闭，在 Windows 上通过 Ctrl + 
 Z，再回车（Enter）或者 Ctrl + C 关闭）。
 
 如果有文件名参数，Hunspell 会在屏幕顶端显示每一个词典里没有的词，而且允许你
@@ -79,14 +79,12 @@ Z，再回车（Enter）或者 Ctrl + C 关闭）。
           case each near miss is capitalized correctly  according  to  the
           dictionary.
 
-          Finally,  if  the  word  does  not appear in the dictionary, and
-          there are no near misses, then the line contains a '#', a space,
-          the  misspelled word, a space, and the character offset from the
-          beginning of the line.  Each sentence of text  input  is  termi‐
+          最终，如果单词不在词典里，且没有邻键词，那么行里就会由 '#'，
+          空格，错词，空格，和从行开始计算的字符位置。Each sentence of text  input  is  termi‐
           nated  with  an  additional blank line, indicating that hunspell
           has completed processing the input line.
 
-          These output lines can be summarized as follows:
+          这些输出行概括如下：
 
           OK:    *
 
@@ -148,43 +146,39 @@ Z，再回车（Enter）或者 Ctrl + C 关闭）。
           with  an uparrow to protect themselves against future changes in
           hunspell.
 
-          To summarize these:
+          概况如下：
 
-          *      Add to personal dictionary
+          *      添加到定制词典
 
-          @      Accept word, but leave out of dictionary
+          @      该词可接受，但是退出词典
 
-          #      Save current personal dictionary
+          #      保存到定制词典
 
-          ~      Set parameters based on filename
+          ~      基于文件名设置参数
 
-          +      Enter TeX mode
+          +      进入 TeX 模式
 
-          -      Exit TeX mode
+          -      退出 TeX 模式
 
-          !      Enter terse mode
+          !      进入精简模式
 
-          %      Exit terse mode
+          %      退出精简模式
 
-          `      Enter verbose-correction mode
+          `      进入详尽模式
 
-          ^      Spell-check rest of line
+          ^      拼写检查剩余行
 
-          In terse mode, hunspell will not print lines beginning with '*',
-          '+', or '-', all of which indicate correct words.  This signifi‐
-          cantly improves running speed when the driving program is  going
-          to ignore correct words anyway.
-
-          In  verbose-correction mode, hunspell includes the original word
-          immediately after the indicator character in output lines begin‐
-          ning  with  '*',  '+', and '-', which simplifies interaction for
-          some programs.
+          在精简模式中，Hunspell 不会打印 '*'、'+'、'-' 开始的行，因为
+          这些都说明检测词是正确的词。当程序忽略正确词信息时这会显著
+          提高运行速度。
+          
+          在详尽模式时，Hunspell 在以 '*'、'+'、'-' 指示符开始的行后立
+          即包含了检测词，这简化了一些程序的互动功能。
 
     --check-apostrophe
-          Check and force Unicode apostrophes  (U+2019),  if  one  of  the
-          ASCII  or  Unicode apostrophes is specified by the spelling dic‐
-          tionary, as a word character (see WORDCHARS, ICONV and OCONV  in
-          hunspell(5)).
+          如果在拼写词典种定义了 ASCII 或 Unicode 撇号做为单词字符（查
+          阅 hunspell(5) 中的 WORDCHARS、ICONV 和 OCONV），则强制检测 
+          Unicode 撇号 (U+2019)。
 
     --check-url
           检查 URL，电子邮箱地址和词典路径。
