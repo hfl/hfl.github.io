@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 知网中的乒乓球研究论文
-categories: tabel-tennis
+categories: table-tennis
 date: 2025-08-27 07:30:34 +0800
 ---
 在知网通过主题词“乒乓球”进行检索，可获得研究文献 22698 篇。通过这些文献的总体分析可知：
