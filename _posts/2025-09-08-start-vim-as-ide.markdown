@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 启用 VIM 做为 IDE 
-categories: vim
+categories: vim ide
 date: 2025-09-08 07:30:34 +0800
 ---
 
