@@ -5,10 +5,9 @@ categories: vim
 date: 2025-09-08 07:30:34 +0800
 ---
 
-Debian 升级到了 13（trixie），一切看起来很好——除了 Apache 2 不能启动和 gEdit 丢失了
-Snippets。
+[Debian](https://debian.org) 升级到了 13（trixie），一切看起来很好——除了 [Apache 2](https://httpd.apache.org) 不能启动和 [gEdit](https://gedit-text-editor.org) 丢失了Snippets。
 
-Apache 2 不能启动就不启动了，反正启动的就是我的本机的博客软件 Textpattern，反正平时
+Apache 2 不能启动就不启动了，反正启动的就是我的本机的博客软件 [Textpattern](https://textpattern.com)，平时
 也不怎么用，所以不着急，慢慢调整吧。
 
 gEdit 是我平时编写软件的 IDE，虽然功能简单，好在我的要求也不高——只需要能够提供括号和
@@ -34,7 +33,7 @@ call plug#end
 
  `set number`：为编辑界面设置行数显示。
 
-Plug：一款极简的 Vim 插件管理器。编写方法如上面的代码。命令有下面几个：
+[Plug](https://github.com/junegunn/vim-plug)：一款极简的 Vim 插件管理器。编写方法如上面的代码。命令有下面几个：
 
 * `:PlugInstall`：用于安装插件
 * `:PlugUpdate`：用于安装或者更新插件
